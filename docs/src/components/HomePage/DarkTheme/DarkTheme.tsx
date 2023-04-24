@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Image, SimpleGrid, Text, useMantineColorScheme, Group, rem } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { Button, Image, SimpleGrid, Text, useMantineColorScheme, Group, rem } from '@k-link/core';
+import { Prism } from '@k-link/prism';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 import { PageSection } from '../PageSection/PageSection';
 import image from './dark-theme-image.png';
@@ -11,7 +11,7 @@ export function DarkTheme() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   const code = `
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -39,7 +39,7 @@ function Demo() {
         </div>
         <div>
           <Text size="lg">
-            Add dark theme to your application with just a few lines of code – Mantine exports
+            Add dark theme to your application with just a few lines of code – Klink UI exports
             global styles both for light and dark theme, all components support dark theme out of
             the box.
           </Text>
@@ -65,7 +65,7 @@ function Demo() {
               radius="md"
               leftIcon={
                 colorScheme === 'dark' ? (
-                  <IconSun size={rem(16)} color={theme.colors.yellow[4]} />
+                  <IconSun size={rem(16)} color={theme.colors.warning[4]} />
                 ) : (
                   <IconMoonStars size={rem(16)} color={theme.colors.blue[7]} />
                 )

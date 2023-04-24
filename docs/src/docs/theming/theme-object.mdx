@@ -3,14 +3,14 @@ group: 'theming'
 title: Theme object
 slug: /theming/theme-object/
 order: 0
-search: 'Theme object, use-mantine-theme, theme overrides, MantineTheme type'
+search: 'Theme object, use-k-link-theme, theme overrides, MantineTheme type'
 ---
 
-import { ThemeDemos } from '@mantine/demos';
+import { ThemeDemos } from '@k-link/demos';
 
 # Theme object
 
-Mantine theme is an object where your application's colors, fonts, spacing, border-radius and other design tokens are stored.
+Klink UI theme is an object where your application's colors, fonts, spacing, border-radius and other design tokens are stored.
 
 ```tsx
 interface MantineTheme {
@@ -111,7 +111,7 @@ interface MantineTheme {
   // Global styles
   globalStyles: (theme: MantineTheme) => CSSObject;
 
-  // Add your own custom properties on Mantine theme
+  // Add your own custom properties on Klink UI theme
   other: Record<string, any>;
 }
 
@@ -124,11 +124,11 @@ interface Heading {
 
 ## Usage
 
-To customize theme, pass theme override object to [MantineProvider](/theming/mantine-provider/) `theme` prop.
-Theme override will be deeply merged with [default theme](https://github.com/mantinedev/mantine/blob/master/src/mantine-styles/src/theme/default-theme.ts).
+To customize theme, pass theme override object to [MantineProvider](/theming/k-link-provider/) `theme` prop.
+Theme override will be deeply merged with [default theme](https://github.com/mantinedev/k-link/blob/master/src/k-link-styles/src/theme/default-theme.ts).
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -191,12 +191,12 @@ passed as an argument to `resetStyles`, `styles` and `inputStyles` functions doe
 
 ### defaultRadius
 
-`theme.defaultRadius` controls default border-radius of all Mantine components ([Button](/core/button/), [TextInput](/core/text-input/), [ThemeIcon](/core/theme-icon/), etc.), default value is `sm`.
+`theme.defaultRadius` controls default border-radius of all Klink UI components ([Button](/core/button/), [TextInput](/core/text-input/), [ThemeIcon](/core/theme-icon/), etc.), default value is `sm`.
 It accepts `'xs' | 'sm' | 'md' | 'lg' | 'xl'` (key of `theme.radius`) or a number to set border-radius in px.
 For example, to remove border-radius from all elements set `defaultRadius: 0`:
 
 ```tsx
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@k-link/core';
 
 function Demo() {
   return (
@@ -210,7 +210,7 @@ function Demo() {
 
 ### colors
 
-Mantine theme has the following properties associated with colors:
+Klink UI theme has the following properties associated with colors:
 
 - `theme.white` used for body and overlays ([Modal](/core/modal/), [Popover](/core/popover/)) background when `theme.colorScheme` is `light`, default value is `#fff`
 - `theme.black` used as color for all text when `theme.colorScheme` is `light`, default value is `#000`
@@ -261,7 +261,7 @@ and other native elements will have `cursor: pointer` style:
 With `theme.other` you can add any amount of extra properties to theme:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -286,7 +286,7 @@ function Demo() {
 To specify `theme.other` type, add file with the following declaration:
 
 ```ts
-declare module '@mantine/core' {
+declare module '@k-link/core' {
   export interface MantineThemeOther {
     myCustomProperty: string;
     myCustomFunction: () => void;
@@ -299,7 +299,7 @@ declare module '@mantine/core' {
 To store theme override object in a variable use `MantineThemeOverride` type:
 
 ```tsx
-import { MantineThemeOverride, MantineProvider } from '@mantine/core';
+import { MantineThemeOverride, MantineProvider } from '@k-link/core';
 
 const myTheme: MantineThemeOverride = {
   colorScheme: 'light',
@@ -316,13 +316,13 @@ function Demo() {
 }
 ```
 
-## use-mantine-theme hook
+## use-k-link-theme hook
 
-`use-mantine-theme` hook returns theme from [MantineProvider](/theming/mantine-provider/) context or default theme
+`use-k-link-theme` hook returns theme from [MantineProvider](/theming/k-link-provider/) context or default theme
 if you did not provide theme override:
 
 ```tsx
-import { useMantineTheme } from '@mantine/core';
+import { useMantineTheme } from '@k-link/core';
 
 function Demo() {
   const theme = useMantineTheme();
@@ -332,10 +332,10 @@ function Demo() {
 
 ## MantineTheme type
 
-You can import `MantineTheme` type from `@mantine/core` package:
+You can import `MantineTheme` type from `@k-link/core` package:
 
 ```tsx
-import { useMantineTheme, MantineTheme } from '@mantine/core';
+import { useMantineTheme, MantineTheme } from '@k-link/core';
 
 function getColor(theme: MantineTheme) {
   return theme.colors.blue[5];

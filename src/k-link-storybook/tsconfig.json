@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./src", "./types", "../../configuration/types"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "lib",
+    "composite": true,
+    "paths": {
+      "@k-link/core": ["../k-link-core/src"],
+      "@k-link/hooks": ["../k-link-hooks/src"],
+      "@k-link/prism": ["../k-link-prism/src"]
+    }
+  },
+  "references": [{ "path": "../k-link-hooks" }, { "path": "../k-link-core" }]
+}

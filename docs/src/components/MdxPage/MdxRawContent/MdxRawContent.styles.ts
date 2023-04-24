@@ -1,4 +1,4 @@
-import { createStyles, rem, em } from '@mantine/core';
+import { createStyles, rem, em } from '@k-link/core';
 import { BREAKPOINT, TABLE_OF_CONTENTS_WIDTH, CONTENT_WIDTH } from '../settings';
 
 export default createStyles((theme, { withToc }: { withToc: boolean }) => ({

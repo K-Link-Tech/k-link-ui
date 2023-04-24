@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Container, Group, Button, Text, useMantineTheme, SimpleGrid, rem } from '@mantine/core';
-import { GithubIcon } from '@mantine/ds';
+import { Container, Group, Button, Text, useMantineTheme, SimpleGrid, rem } from '@k-link/core';
+import { GithubIcon } from '@k-link/ds';
 import { Hero } from './Hero';
 import { FEATURES_DATA } from './features';
 import useStyles from './Jumbotron.styles';
@@ -33,8 +33,8 @@ export function Jumbotron() {
         <Hero />
 
         <Text className={classes.description}>
-          Build fully functional accessible web applications faster than ever – Mantine includes
-          more than 100 customizable components and 50 hooks to cover you in any situation
+          Build fully functional accessible web applications faster than ever – Klink UI includes
+          more than 100 customizable components and 40 hooks to cover you in any situation
         </Text>
 
         <SimpleGrid
@@ -61,7 +61,7 @@ export function Jumbotron() {
 
           <Button
             component="a"
-            href="https://github.com/mantinedev/mantine"
+            href="https://github.com/mantinedev/k-link"
             size="xl"
             variant="outline"
             radius="md"

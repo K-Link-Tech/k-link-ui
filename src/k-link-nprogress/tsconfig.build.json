@@ -1,0 +1,36 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./src", "./types", "../../configuration/types"],
+  "exclude": [
+    "./lib",
+    "./esm",
+    "./cjs",
+    "**/*.story.tsx",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/styles.api.ts",
+    "src/components/*/demos/*",
+    "src/demos.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    "declarationDir": "lib",
+    "paths": {
+      "@k-link/core": ["../k-link-core/src"],
+      "@k-link/hooks": ["../k-link-hooks/src"],
+      "@k-link/utils": ["../k-link-utils/src"],
+      "@k-link/tests": ["../k-link-tests/src"]
+    }
+  },
+  "references": [
+    { "path": "../k-link-core" },
+    { "path": "../k-link-hooks" },
+    { "path": "../k-link-utils" },
+    { "path": "../k-link-tests" }
+  ]
+}

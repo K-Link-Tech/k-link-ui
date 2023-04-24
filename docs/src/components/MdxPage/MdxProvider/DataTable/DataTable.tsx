@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, rem } from '@mantine/core';
+import { Table, rem } from '@k-link/core';
 import DocsSection from '../../../DocsSection/DocsSection';
 
 interface DataTableProps {

@@ -1,8 +1,8 @@
 {
-  "name": "mantine-docs",
+  "name": "k-link-docs",
   "private": true,
-  "description": "Mantine docs",
-  "version": "1.0.0",
+  "description": "Klink UI docs",
+  "version": "1.3.0",
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
   "resolutions": {
     "@types/react": "18.0.9"

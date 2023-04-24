@@ -1,18 +1,18 @@
 ---
-group: 'mantine-dates'
-package: '@mantine/dates'
+group: 'k-link-dates'
+package: '@k-link/dates'
 title: MonthPicker
 order: 1
 slug: /dates/month-picker/
 description: 'Inline month, multiple months and months range picker'
 props: ['MonthPicker']
-import: "import { MonthPicker } from '@mantine/dates';"
-source: 'mantine-dates/src/components/MonthPicker/MonthPicker.tsx'
+import: "import { MonthPicker } from '@k-link/dates';"
+source: 'k-link-dates/src/components/MonthPicker/MonthPicker.tsx'
 docs: 'dates/MonthPicker.mdx'
 styles: ['MonthPicker']
 ---
 
-import { MonthPickerDemos } from '@mantine/demos';
+import { MonthPickerDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -110,7 +110,7 @@ Use `decadeLabelFormat` and `yearLabelFormat` to change [dayjs format](https://d
 
 ## Localization
 
-Usually it is better to specify `@mantine/dates` package locale in [DatesProvider](/dates/dates-provider/),
+Usually it is better to specify `@k-link/dates` package locale in [DatesProvider](/dates/date-provider/),
 but you can also override locale per component:
 
 <Demo data={MonthPickerDemos.locale} />
@@ -122,7 +122,7 @@ but you can also override locale per component:
 Set `ariaLabels` prop to specify `aria-label` attributes for next/previous controls:
 
 ```tsx
-import { MonthPicker } from '@mantine/dates';
+import { MonthPicker } from '@k-link/dates';
 
 function Demo() {
   return (
@@ -144,7 +144,7 @@ function Demo() {
 Use `getYearControlProps`/`getMonthControlProps` to customize `aria-label` attribute:
 
 ```tsx
-import { MonthPicker } from '@mantine/dates';
+import { MonthPicker } from '@k-link/dates';
 
 function Demo() {
   return (
@@ -168,19 +168,19 @@ Note that the following events will only trigger if focus is on month control.
   data={[
     {
       key: 'ArrowRight',
-      description: 'Focuses next non-disabled month',
+      description: 'Focuses next month in a row that is not disabled',
     },
     {
       key: 'ArrowLeft',
-      description: 'Focuses previous non-disabled month',
+      description: 'Focuses previous month in a row that is not disabled',
     },
     {
       key: 'ArrowDown',
-      description: 'Focuses next non-disabled month in the same column',
+      description: 'Focuses next month in a column that is not disabled',
     },
     {
       key: 'ArrowUp',
-      description: 'Focuses previous non-disabled month in the same column',
+      description: 'Focuses previous month in a column that is not disabled',
     },
   ]}
 />

@@ -11,7 +11,7 @@ search: 'Global styles with emotion, @font-face'
 The best way to add global styles is `theme.globalStyles`, this way you will be able to share these styles between different environments (for example, Next.js application and Storybook):
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -30,7 +30,7 @@ function Demo() {
           },
 
           '.your-class': {
-            backgroundColor: 'red',
+            backgroundColor: 'error',
           },
 
           '#your-id > [data-active]': {
@@ -53,7 +53,7 @@ function Demo() {
 - css object or an array of css objects
 
 ```tsx
-import { Global } from '@mantine/core';
+import { Global } from '@k-link/core';
 
 function Demo() {
   return (
@@ -71,7 +71,7 @@ function Demo() {
         },
 
         '.your-class': {
-          backgroundColor: 'red',
+          backgroundColor: 'error',
         },
 
         '#your-id > [data-active]': {
@@ -85,10 +85,10 @@ function Demo() {
 
 ## Where to render Global
 
-Usually global styles depend on theme, you can render `Global` component anywhere within [MantineProvider](/theming/mantine-provider/):
+Usually global styles depend on theme, you can render `Global` component anywhere within [MantineProvider](/theming/k-link-provider/):
 
 ```tsx
-import { Global, MantineProvider } from '@mantine/core';
+import { Global, MantineProvider } from '@k-link/core';
 
 function MyGlobalStyles() {
   return (
@@ -113,10 +113,10 @@ function Demo() {
 
 ## Load fonts
 
-To load use array syntax. The following example shows how Mantine docs website loads GreycliffCF font:
+To load use array syntax. The following example shows how Klink UI docs website loads GreycliffCF font:
 
 ```tsx
-import { Global } from '@mantine/core';
+import { Global } from '@k-link/core';
 import bold from './GreycliffCF-Bold.woff2';
 import heavy from './GreycliffCF-Heavy.woff2';
 

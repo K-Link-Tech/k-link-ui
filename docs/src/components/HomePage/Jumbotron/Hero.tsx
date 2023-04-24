@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMantineTheme } from '@mantine/core';
+import { useMantineTheme } from '@k-link/core';
 
 export function Hero() {
   const theme = useMantineTheme();
@@ -70,7 +70,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -81,7 +81,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -92,7 +92,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -103,7 +103,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -114,7 +114,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -125,7 +125,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -136,7 +136,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -147,7 +147,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -158,7 +158,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -169,7 +169,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -180,7 +180,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -191,7 +191,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
         <linearGradient
@@ -202,7 +202,7 @@ export function Hero() {
           y2="47.652"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor={theme.colors.cyan[theme.colorScheme === 'dark' ? 4 : 5]} />
+          <stop stopColor={theme.colors.blue_light[theme.colorScheme === 'dark' ? 4 : 5]} />
           <stop offset="1" stopColor={theme.colors.blue[theme.colorScheme === 'dark' ? 5 : 7]} />
         </linearGradient>
       </defs>

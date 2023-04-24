@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery, navigate } from 'gatsby';
-import { randomId, useMediaQuery } from '@mantine/hooks';
-import { Notifications } from '@mantine/notifications';
-import { ModalsProvider, ContextModalProps } from '@mantine/modals';
-import { SpotlightProvider, SpotlightAction, useSpotlight } from '@mantine/spotlight';
-import { Text, Button, rem, em } from '@mantine/core';
+import { randomId, useMediaQuery } from '@k-link/hooks';
+import { Notifications } from '@k-link/notifications';
+import { ModalsProvider, ContextModalProps } from '@k-link/modals';
+import { SpotlightProvider, SpotlightAction } from '@k-link/spotlight';
+import { Text, Button, rem, em } from '@k-link/core';
 import { IconSearch } from '@tabler/icons-react';
 import MdxProvider from '../MdxPage/MdxProvider/MdxProvider';
 import Navbar from './Navbar/Navbar';
@@ -92,22 +92,6 @@ function getActions(data: ReturnType<typeof getDocsData>): SpotlightAction[] {
   }, []);
 }
 
-const searchParamName = 'search';
-
-// Separate component to allow calling useSpotlight hook.
-function AutoOpenSpotlight() {
-  const spotlight = useSpotlight();
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has(searchParamName)) {
-      spotlight.openSpotlight();
-    }
-  }, []);
-
-  return null;
-}
-
 export function LayoutInner({ children, location }: LayoutProps) {
   const navbarCollapsed = useMediaQuery(`(max-width: ${em(NAVBAR_BREAKPOINT)})`);
   const shouldRenderHeader = !shouldExcludeHeader(location.pathname);
@@ -115,11 +99,6 @@ export function LayoutInner({ children, location }: LayoutProps) {
   const { classes, cx } = useStyles({ shouldRenderHeader });
   const [navbarOpened, setNavbarState] = useState(false);
   const data = getDocsData(useStaticQuery(query));
-  const [spotlightQuery, setSpotlightQuery] = useState('');
-
-  useEffect(() => {
-    setSpotlightQuery(new URLSearchParams(window.location.search).get(searchParamName) || '');
-  }, []);
 
   return (
     <SpotlightProvider
@@ -128,8 +107,6 @@ export function LayoutInner({ children, location }: LayoutProps) {
       searchPlaceholder="Search documentation"
       shortcut={['mod + K', 'mod + P', '/']}
       highlightQuery
-      query={spotlightQuery}
-      onQueryChange={setSpotlightQuery}
       searchInputProps={{
         id: randomId(),
         name: randomId(),
@@ -145,7 +122,6 @@ export function LayoutInner({ children, location }: LayoutProps) {
       }}
     >
       <Notifications />
-      <AutoOpenSpotlight />
       <div
         className={cx({
           [classes.withNavbar]: shouldRenderNavbar,

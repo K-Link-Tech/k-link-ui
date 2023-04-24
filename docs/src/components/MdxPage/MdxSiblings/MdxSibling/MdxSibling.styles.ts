@@ -1,4 +1,4 @@
-import { createStyles, getStylesRef, rem } from '@mantine/core';
+import { createStyles, getStylesRef, rem } from '@k-link/core';
 
 export default createStyles((theme) => ({
   control: {

@@ -1,4 +1,4 @@
-import { createStyles, rem, em } from '@mantine/core';
+import { createStyles, rem, em } from '@k-link/core';
 
 const BREAKPOINT = 765;
 

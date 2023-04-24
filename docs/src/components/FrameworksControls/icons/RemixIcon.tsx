@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMantineTheme, Center, rem } from '@mantine/core';
+import { useMantineTheme, Center, rem } from '@k-link/core';
 
 export function RemixIcon() {
   const theme = useMantineTheme();

@@ -3,7 +3,7 @@ group: 'changelog'
 title: 'Version 6.0.0'
 order: 2
 slug: /changelog/6-0-0/
-release: https://github.com/mantinedev/mantine/releases/tag/6.0.0
+release: https://github.com/mantinedev/k-link/releases/tag/6.0.0
 date: 'March 2nd, 2023'
 ---
 
@@ -22,24 +22,24 @@ import {
   PinInputDemos,
   SpotlightDemos,
   CalendarDemos,
-} from '@mantine/demos';
+} from '@k-link/demos';
 
 ## Breaking changes
 
 The following changes are breaking. Note that although
 we've tried to include all breaking changes with migration guides in the list you still may
 experience undocumented changes. If you think that these changes worth including in this list,
-let us know by [opening an issue on GitHub](https://github.com/mantinedev/mantine/issues/new/choose).
+let us know by [opening an issue on GitHub](https://github.com/mantinedev/k-link/issues/new/choose).
 
 ### Migration to rem/em units
 
-All Mantine components now use [rem units](https://mantine.dev/styles/rem/). `1rem` is considered to be `16px`
+All Klink UI components now use [rem units](https://k-link.dev/styles/rem/). `1rem` is considered to be `16px`
 with medium text size selected by user, all components will scale based on settings specified in browser.
 `theme.spacing`, `theme.radius`, `theme.fontSizes` and other theme properties overrides
 are now expected to be defined in rem. `theme.breakpoints` are expected to be defined in `em` units:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -58,11 +58,11 @@ function Demo() {
 ```
 
 You can no longer use addition, subtraction, division, multiplication and other math operations
-with theme values in [createStyles](https://mantine.dev/styles/create-styles/) and [sx prop](https://mantine.dev/styles/sx/),
+with theme values in [createStyles](https://k-link.dev/styles/create-styles/) and [sx prop](https://k-link.dev/styles/sx/),
 use `calc` instead:
 
 ```tsx
-import { createStyles, rem } from '@mantine/core':
+import { createStyles, rem } from '@k-link/core':
 
 // 5.x expressions that will no longer work in 6.x
 createStyles((theme) => ({
@@ -104,11 +104,11 @@ createStyles((theme) => ({
 
 ### Automatic px to rem conversion
 
-If you use numbers in Mantine components props, they will be treated as `px` and converted to `rem`,
+If you use numbers in Klink UI components props, they will be treated as `px` and converted to `rem`,
 for example:
 
 ```tsx
-import { ColorSwatch } from '@mantine/core';
+import { ColorSwatch } from '@k-link/core';
 
 function DemoPx() {
   // Specify ColorSwatch size in px, it will be automatically converted to rem
@@ -126,7 +126,7 @@ The same logic is applied to [style props](/styles/style-props/) available
 in every component:
 
 ```tsx
-import { Box } from '@mantine/core';
+import { Box } from '@k-link/core';
 
 function Demo() {
   // width: 2rem, height: 1rem
@@ -138,37 +138,37 @@ function Demo() {
 
 ### createStyles breaking changes
 
-[createStyles](https://mantine.dev/styles/create-styles/) function no longer receives `getRef`
-as a third argument. Use `getStylesRef` exported from `@mantine/core` package instead:
+[createStyles](https://k-link.dev/styles/create-styles/) function no longer receives `getRef`
+as a third argument. Use `getStylesRef` exported from `@k-link/core` package instead:
 
 ```tsx
 // in 5.x, will not work in 6.x
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 createStyles((theme, params, getRef) => {
   child: { ref: getRef('child') },
-  parent: { [`& .${getRef('child')}`]: { color: 'red' } },
+  parent: { [`& .${getRef('child')}`]: { color: 'error' } },
 });
 
 // in 6.x use getStylesRef function
-import { createStyles, getStylesRef } from '@mantine/core';
+import { createStyles, getStylesRef } from '@k-link/core';
 
 createStyles((theme, params) => {
   child: { ref: getStylesRef('child') },
-  parent: { [`& .${getStylesRef('child')}`]: { color: 'red' } },
+  parent: { [`& .${getStylesRef('child')}`]: { color: 'error' } },
 });
 ```
 
-### @mantine/notifications breaking changes
+### @k-link/notifications breaking changes
 
-[@mantine/notifications](https://mantine.dev/others/notifications/) package no longer exports
+[@k-link/notifications](https://k-link.dev/others/notifications/) package no longer exports
 `NotificationsProvider` component. Instead you should add `Notifications` component to any
 part of your application. This change allows to avoid unnecessary rerenders of child components
 when notifications state change. Also `useNotifications` hook is no longer exported from the package.
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
+import { MantineProvider } from '@k-link/core';
+import { Notifications } from '@k-link/notifications';
 
 function Demo() {
   return (
@@ -180,15 +180,15 @@ function Demo() {
 }
 ```
 
-### @mantine/rte package deprecation
+### @k-link/rte package deprecation
 
-`@mantine/rte` package is deprecated – it will no longer receive updates (last version will remain 5.x)
-and it may no longer be compatible with `@mantine/core` and `@mantine/hooks` packages (6.x and later versions).
-Migrate to [@mantine/tiptap](https://mantine.dev/others/tiptap/) as soon as possible.
+`@k-link/rte` package is deprecated – it will no longer receive updates (last version will remain 5.x)
+and it may no longer be compatible with `@k-link/core` and `@k-link/hooks` packages (6.x and later versions).
+Migrate to [@k-link/tiptap](https://k-link.dev/others/tiptap/) as soon as possible.
 
-### @mantine/dates breaking changes
+### @k-link/dates breaking changes
 
-All components from `@mantine/dates` package were rebuilt from scratch.
+All components from `@k-link/dates` package were rebuilt from scratch.
 Note that the following list is not full as it is difficult to include all breaking changes
 after a full package revamp – follow documentation of component that you use to find out about
 all breaking changes.
@@ -198,19 +198,19 @@ all breaking changes.
 - `Calendar` component was renamed to `DatePicker`
 - `TimeInput` component was migrated to native `input[type="time"]` as it provides better UX in most browsers
 - `TimeRangeInput` component was removed – it is no longer exported from the package
-- `DateRangePicker` and `RangeCalendar` components were removed – you can now setup dates range picking in [DatePicker](https://mantine.dev/dates/date-picker/) and [DatePickerInput](https://mantine.dev/dates/date-picker-input/)
+- `DateRangePicker` and `RangeCalendar` components were removed – you can now setup dates range picking in [DatePicker](https://k-link.dev/dates/date-picker/) and [DatePickerInput](https://k-link.dev/dates/date-picker-input/)
 - `amountOfMonths` prop was renamed to `numberOfColumns` in all components
-- `DatePickerInput` (previously `DatePicker`) component no longer supports `allowFreeInput` prop – use [DateInput](https://mantine.dev/dates/date-input/) component instead
+- `DatePickerInput` (previously `DatePicker`) component no longer supports `allowFreeInput` prop – use [DateInput](https://k-link.dev/dates/date-input/) component instead
 - `DatePicker` (previously `Calendar`) component no longer supports `dayClassName` and `dayStyle` props – use `getDayProps` instead
 
 ### Theme object changes
 
-You can no longer define `dateFormat` and `datesLocale` in [theme](https://mantine.dev/theming/theme-object/),
+You can no longer define `dateFormat` and `datesLocale` in [theme](https://k-link.dev/theming/theme-object/),
 use components prop to specify format instead:
 
 ```tsx
 // 5.x, will not work in 6.x
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -221,7 +221,7 @@ function Demo() {
 }
 
 // 6.x – use components props
-import { DatePickerInput } from '@mantine/dates';
+import { DatePickerInput } from '@k-link/dates';
 
 function Demo() {
   return <DatePickerInput valueFormat="MMMM D, YYYY" locale="es" />;
@@ -230,7 +230,7 @@ function Demo() {
 
 ### Modal and Drawer breaking changes
 
-[Modal](https://mantine.dev/core/modal/) and [Drawer](https://mantine.dev/core/drawer/) components
+[Modal](https://k-link.dev/core/modal/) and [Drawer](https://k-link.dev/core/drawer/) components
 props were renamed:
 
 - `withFocusReturn` → `returnFocus`
@@ -253,14 +253,14 @@ props were renamed:
 
 ### NumberInput breaking changes
 
-[NumberInput](https://mantine.dev/core/number-input/) component types for `value`, `defaultValue`
+[NumberInput](https://k-link.dev/core/number-input/) component types for `value`, `defaultValue`
 and `onChange` props were changed. It now expects value to be `number | ''` (number or empty string) instead
 of `number | undefined`. This change was made to address multiple bugs that happened because it was
 not possible to differentiate controlled and uncontrolled `NumberInput`.
 
 ```tsx
 import { useState } from 'react';
-import { NumberInput } from '@mantine/core';
+import { NumberInput } from '@k-link/core';
 
 function Demo() {
   const [value, setValue] = useState<number | ''>(0);
@@ -268,7 +268,7 @@ function Demo() {
 }
 ```
 
-### [Pagination](https://mantine.dev/core/pagination/) breaking changes
+### [Pagination](https://k-link.dev/core/pagination/) breaking changes
 
 - Styles API selectors were changed
 - Renamed/removed props:
@@ -277,10 +277,10 @@ function Demo() {
   - `initialPage` → `defaultValue`
   - `page` → `value`
 
-### @mantine/spotlight breaking changes
+### @k-link/spotlight breaking changes
 
-[Spotlight](https://mantine.dev/others/spotlight/) component was migrated to use [Modal](https://mantine.dev/core/modal/)
-under the hood. Its Styles API selectors and some props names were changed – it now supports all [Modal](https://mantine.dev/core/modal/) component props.
+[Spotlight](https://k-link.dev/others/spotlight/) component was migrated to use [Modal](https://k-link.dev/core/modal/)
+under the hood. Its Styles API selectors and some props names were changed – it now supports all [Modal](https://k-link.dev/core/modal/) component props.
 
 Renamed props:
 
@@ -292,37 +292,37 @@ Renamed props:
 - `transitionDuration` → `transitionProps.transition`
 - `transitionTimingFunction` → `transitionProps.timingFunction`
 
-[Spotlight](https://mantine.dev/others/spotlight/) actions are now fully controlled:
+[Spotlight](https://k-link.dev/others/spotlight/) actions are now fully controlled:
 
 - `actions` prop no longer accept a callback function, only a list of actions
 - To make register/remove features to work you will need to store actions in state
 
 ### Other breaking changes
 
-- [Text](https://mantine.dev/core/text/) no longer supports `variant="link"`, use [Anchor](https://mantine.dev/core/anchor/) instead
-- [Input](https://mantine.dev/core/input/) Styles API was changed – `disabled`, `invalid` and `withIcon` selectors are no longer available, they were migrated to `data-disabled`, `data-invalid` and `data-with-icon` attributes
-- [PasswordInput](https://mantine.dev/core/password-input/) Styles API was changed – `invalid` and `withIcon` selectors are no longer available, use `data-invalid` and `data-with-icon` attributes with `innerInput` selector
-- `invalid` prop was renamed to `error` in [Input](https://mantine.dev/core/input/) component
-- [FileInput](https://mantine.dev/core/file-input/), [Select](https://mantine.dev/core/select/) and [MultiSelect](https://mantine.dev/core/multi-select/) components no longer support `clearButtonLabel` and `clearButtonTabIndex` props, use `clearButtonProps` instead to add any extra props to the clear button
-- `@mantine/next` package no longer exports `NextLink` component
-- [Checkbox.Group](https://mantine.dev/core/checkbox/), [Switch.Group](https://mantine.dev/core/switch/) and [Radio.Group](https://mantine.dev/core/radio/) components no longer include [Group](https://mantine.dev/core/group/) – `orientation`, `offset` and `spacing` props are no longer supported. This change gives you more freedom on how to organize inputs layout.
-- [Chip.Group](https://mantine.dev/core/chip/) no longer includes `Group` – you need to manage layout on your side
-- [List](https://mantine.dev/core/list/) component Styles API was changed, it no longer has `withIcon` selector, use `data-with-icon` attribute instead
-- `withFocusReturn` prop was renamed to `returnFocus` in [Modal](https://mantine.dev/core/modal/) and [Drawer](https://mantine.dev/core/drawer/) components
-- [Card](https://mantine.dev/core/card/) component now uses `padding` prop instead of `p` to offset `Card.Section` components
-- [RichTextEditor](https://mantine.dev/others/tiptap/) now depends on `@tabler/icons-react` (`>=2.1.0`) package instead of `@tabler/icons`
-- `@mantine/core` package no longer exports `GroupedTransition` component, use multiple [Transition](https://mantine.dev/core/transition/) components instead
-- `use-scroll-lock` hook is deprecated, all Mantine components now use [react-remove-scroll](https://github.com/theKashey/react-remove-scroll)
-- [ScrollArea.Autosize](https://mantine.dev/core/scroll-area/) component prop `maxHeight` is removed, it is replaced with `mah` [style prop](https://mantine.dev/styles/style-props/)
-- [SegmentedControl](https://mantine.dev/core/segmented-control/) component Styles API was changed – `labelActive` and `disabled` selectors were removed (replaced with `data-active` and `data-disabled` attributes on `label` selector), `active` selector was renamed to `indicator`
-- [Notification](https://mantine.dev/core/notification/) component prop `disallowClose` prop was renamed to `withCloseButton`, it also was changed in [notifications system](https://mantine.dev/others/notifications/)
-- [Tooltip](https://mantine.dev/core/tooltip/) component props `transition` and `transitionDuration` were renamed to `transitionProps`
-- [Popover](https://mantine.dev/core/popover/), [HoverCard](https://mantine.dev/core/hover-card/), [Menu](https://mantine.dev/core/menu/), [Select](https://mantine.dev/core/select/), [MultiSelect](https://mantine.dev/core/multi-select/), [ColorInput](https://mantine.dev/core/color-input/) and [Autocomplete](https://mantine.dev/core/autocomplete/) components `transition`, `transitionDuration` and `exitTransitionDuration` props were renamed to `transitionProps`
-- [Indicator](https://mantine.dev/core/indicator/) component no longer has the props `dot`, `showZero` and `overflowCount`. Use `disabled` and `label` instead to recreate the previous behavior.
+- [Text](https://k-link.dev/core/text/) no longer supports `variant="link"`, use [Anchor](https://k-link.dev/core/anchor/) instead
+- [Input](https://k-link.dev/core/input/) Styles API was changed – `disabled`, `invalid` and `withIcon` selectors are no longer available, they were migrated to `data-disabled`, `data-invalid` and `data-with-icon` attributes
+- [PasswordInput](https://k-link.dev/core/password-input/) Styles API was changed – `invalid` and `withIcon` selectors are no longer available, use `data-invalid` and `data-with-icon` attributes with `innerInput` selector
+- `invalid` prop was renamed to `error` in [Input](https://k-link.dev/core/input/) component
+- [FileInput](https://k-link.dev/core/file-input/), [Select](https://k-link.dev/core/select/) and [MultiSelect](https://k-link.dev/core/multi-select/) components no longer support `clearButtonLabel` and `clearButtonTabIndex` props, use `clearButtonProps` instead to add any extra props to the clear button
+- `@k-link/next` package no longer exports `NextLink` component
+- [Checkbox.Group](https://k-link.dev/core/checkbox/), [Switch.Group](https://k-link.dev/core/switch/) and [Radio.Group](https://k-link.dev/core/radio/) components no longer include [Group](https://k-link.dev/core/group/) – `orientation`, `offset` and `spacing` props are no longer supported. This change gives you more freedom on how to organize inputs layout.
+- [Chip.Group](https://k-link.dev/core/chip/) no longer includes `Group` – you need to manage layout on your side
+- [List](https://k-link.dev/core/list/) component Styles API was changed, it no longer has `withIcon` selector, use `data-with-icon` attribute instead
+- `withFocusReturn` prop was renamed to `returnFocus` in [Modal](https://k-link.dev/core/modal/) and [Drawer](https://k-link.dev/core/drawer/) components
+- [Card](https://k-link.dev/core/card/) component now uses `padding` prop instead of `p` to offset `Card.Section` components
+- [RichTextEditor](https://k-link.dev/others/tiptap/) now depends on `@tabler/icons-react` (`>=2.1.0`) package instead of `@tabler/icons`
+- `@k-link/core` package no longer exports `GroupedTransition` component, use multiple [Transition](https://k-link.dev/core/transition/) components instead
+- `use-scroll-lock` hook is deprecated, all Klink UI components now use [react-remove-scroll](https://github.com/theKashey/react-remove-scroll)
+- [ScrollArea.Autosize](https://k-link.dev/core/scroll-area/) component prop `maxHeight` is removed, it is replaced with `mah` [style prop](https://k-link.dev/styles/style-props/)
+- [SegmentedControl](https://k-link.dev/core/segmented-control/) component Styles API was changed – `labelActive` and `disabled` selectors were removed (replaced with `data-active` and `data-disabled` attributes on `label` selector), `active` selector was renamed to `indicator`
+- [Notification](https://k-link.dev/core/notification/) component prop `disallowClose` prop was renamed to `withCloseButton`, it also was changed in [notifications system](https://k-link.dev/others/notifications/)
+- [Tooltip](https://k-link.dev/core/tooltip/) component props `transition` and `transitionDuration` were renamed to `transitionProps`
+- [Popover](https://k-link.dev/core/popover/), [HoverCard](https://k-link.dev/core/hover-card/), [Menu](https://k-link.dev/core/menu/), [Select](https://k-link.dev/core/select/), [MultiSelect](https://k-link.dev/core/multi-select/), [ColorInput](https://k-link.dev/core/color-input/) and [Autocomplete](https://k-link.dev/core/autocomplete/) components `transition`, `transitionDuration` and `exitTransitionDuration` props were renamed to `transitionProps`
+- [Indicator](https://k-link.dev/core/indicator/) component no longer has the props `dot`, `showZero` and `overflowCount`. Use `disabled` and `label` instead to recreate the previous behavior.
 
 ## Variants and sizes on MantineProvider
 
-You can now use [MantineProvider](https://mantine.dev/theming/mantine-provider/) to add variants to all Mantine components that support [Styles API](https://mantine.dev/styles/styles-api/)
+You can now use [MantineProvider](https://k-link.dev/theming/k-link-provider/) to add variants to all Klink UI components that support [Styles API](https://k-link.dev/styles/styles-api/)
 and sizes to components that support `size` prop.
 
 Variants:
@@ -333,73 +333,73 @@ Sizes:
 
 <Demo data={ThemeDemos.sizes} />
 
-## Updated @mantine/dates package
+## Updated @k-link/dates package
 
-`@mantine/dates` package was rebuilt from scratch, it now includes new components to
-pick [year](https://mantine.dev/dates/year-picker/), [month](https://mantine.dev/dates/month-picker/)
-and [dates](https://mantine.dev/dates/date-picker/). All new pickers support `type` prop that can be:
+`@k-link/dates` package was rebuilt from scratch, it now includes new components to
+pick [year](https://k-link.dev/dates/year-picker/), [month](https://k-link.dev/dates/month-picker/)
+and [dates](https://k-link.dev/dates/date-picker/). All new pickers support `type` prop that can be:
 
 - `default` – `Date | null` – user can pick one date
 - `multiple` – `Date[]` – user can pick any number of dates
 - `range` – `[Date | null, Date | null]` – user can pick a range of two dates
 
-`type="default"` example with [DatePickerInput](https://mantine.dev/dates/date-picker-input/) component:
+`type="default"` example with [DatePickerInput](https://k-link.dev/dates/date-picker-input/) component:
 
 <Demo data={DatePickerInputDemos.usage} />
 
-`type="multiple"` example with [MonthPickerInput](https://mantine.dev/dates/month-picker-input/) component:
+`type="multiple"` example with [MonthPickerInput](https://k-link.dev/dates/month-picker-input/) component:
 
 <Demo data={MonthPickerInputDemos.multiple} />
 
-`type="range"` example with [YearPickerInput](https://mantine.dev/dates/year-picker-input/) component:
+`type="range"` example with [YearPickerInput](https://k-link.dev/dates/year-picker-input/) component:
 
 <Demo data={YearPickerInputDemos.range} />
 
-### [DateTimePicker component](https://mantine.dev/dates/date-time-picker/)
+### [DateTimePicker component](https://k-link.dev/dates/date-time-picker/)
 
 <Demo data={DateTimePickerDemos.usage} />
 
-### [DateInput](https://mantine.dev/dates/date-input/)
+### [DateInput](https://k-link.dev/dates/date-input/)
 
 <Demo data={DateInputDemos.usage} />
 
-### [YearPicker component](https://mantine.dev/dates/year-picker/)
+### [YearPicker component](https://k-link.dev/dates/year-picker/)
 
 <Demo data={YearPickerDemos.usage} />
 
-### [YearPickerInput](https://mantine.dev/dates/year-picker-input/)
+### [YearPickerInput](https://k-link.dev/dates/year-picker-input/)
 
 <Demo data={YearPickerInputDemos.usage} />
 
-### [MonthPicker](https://mantine.dev/dates/month-picker/)
+### [MonthPicker](https://k-link.dev/dates/month-picker/)
 
 <Demo data={MonthPickerDemos.usage} />
 
-### [MonthPickerInput](https://mantine.dev/dates/month-picker-input/)
+### [MonthPickerInput](https://k-link.dev/dates/month-picker-input/)
 
 <Demo data={MonthPickerInputDemos.usage} />
 
-### [Calendar](https://mantine.dev/dates/calendar/)
+### [Calendar](https://k-link.dev/dates/calendar/)
 
 `Calendar` component can now be used as a base for date pickers with custom logic.
 For example, you can build week picker component with it:
 
 <Demo data={CalendarDemos.weekPicker} />
 
-### [DatesProvider](https://mantine.dev/dates/dates-provider/)
+### [DatesProvider](https://k-link.dev/dates/dates-provider/)
 
 `DatesProvider` component lets you set various settings that are shared across all
-components exported from `@mantine/dates` package:
+components exported from `@k-link/dates` package:
 
 <Demo data={DatesProviderDemos.usage} />
 
-## New [PinInput](https://mantine.dev/core/pin-input/) component
+## New [PinInput](https://k-link.dev/core/pin-input/) component
 
 <Demo data={PinInputDemos.usage} />
 
 ## Overlay component improvements
 
-[Overlay](https://mantine.dev/core/overlay/) component now supports the following new features:
+[Overlay](https://k-link.dev/core/overlay/) component now supports the following new features:
 
 - You can now render `children` inside `Overlay`
 - When `center` prop is set overlay children will be centered vertically and horizontally
@@ -409,10 +409,10 @@ components exported from `@mantine/dates` package:
 
 ## Modal and Drawer components improvements
 
-### Compound components
+### Modular components
 
-[Modal](https://mantine.dev/core/modal/) and [Drawer](https://mantine.dev/core/drawer/) components
-now expose compound components that can be used to build custom modals and drawers. This feature
+[Modal](https://k-link.dev/core/modal/) and [Drawer](https://k-link.dev/core/drawer/) components
+now expose modular components that can be used to build custom modals and drawers. This feature
 allows you to have full control over the component rendering. Previous approach with single
 `Modal`/`Drawer` component will still work the same way as before.
 
@@ -420,41 +420,41 @@ allows you to have full control over the component rendering. Previous approach 
 
 ### Built in ScrollArea
 
-[Modal](https://mantine.dev/core/modal/) and [Drawer](https://mantine.dev/core/drawer/) components
-now use [ScrollArea](https://mantine.dev/core/scroll-area/) component to handle scroll:
+[Modal](https://k-link.dev/core/modal/) and [Drawer](https://k-link.dev/core/drawer/) components
+now use [ScrollArea](https://k-link.dev/core/scroll-area/) component to handle scroll:
 
 <Demo data={ModalDemos.overflow} />
 
 ### Modal offset
 
-[Modal](https://mantine.dev/core/modal/) component now supports `xOffset` and `yOffset` props
+[Modal](https://k-link.dev/core/modal/) component now supports `xOffset` and `yOffset` props
 to control vertical and horizontal offsets of the modal content:
 
 <Demo data={ModalDemos.offset} />
 
 ## keepMounted prop
 
-Components that use [Transition](https://mantine.dev/core/transition/) now support `keepMounted`.
+Components that use [Transition](https://k-link.dev/core/transition/) now support `keepMounted`.
 When `keepMounted` prop is set component will not be unmounted from the DOM and instead it will
 be hidden with `display: none` styles.
 
 `keepMounted` prop is supported by the following components:
 
-- [Transition](https://mantine.dev/core/transition/)
-- [Modal](https://mantine.dev/core/modal/)
-- [Drawer](https://mantine.dev/core/drawer/)
-- [Dialog](https://mantine.dev/core/dialog/)
-- [LoadingOverlay](https://mantine.dev/core/loading-overlay/)
-- [Popover](https://mantine.dev/core/popover/)
-- [Tooltip](https://mantine.dev/core/tooltip/)
+- [Transition](https://k-link.dev/core/transition/)
+- [Modal](https://k-link.dev/core/modal/)
+- [Drawer](https://k-link.dev/core/drawer/)
+- [Dialog](https://k-link.dev/core/dialog/)
+- [LoadingOverlay](https://k-link.dev/core/loading-overlay/)
+- [Popover](https://k-link.dev/core/popover/)
+- [Tooltip](https://k-link.dev/core/tooltip/)
 
 ## Pagination component improvements
 
-[Pagination](https://mantine.dev/core/pagination/) component now supports changing icons with props and compound components:
+[Pagination](https://k-link.dev/core/pagination/) component now supports changing icons with props and modular components:
 
 <Demo data={PaginationDemos.composition} />
 
-## @mantine/spotlight improvements
+## @k-link/spotlight improvements
 
 ### Controlled actions
 
@@ -471,23 +471,23 @@ You can now fully control search query:
 ## Other changes
 
 - `rightSection` of all inputs is now based on `size` prop by default (previously it was a static value)
-- [Chip](https://mantine.dev/core/chip/) component now supports `filled`, `outline` and `light` variants
+- [Chip](https://k-link.dev/core/chip/) component now supports `filled`, `outline` and `light` variants
 - `theme.headings.fontFamily` now fallbacks to `theme.fontFamily` if value is not defined on `MantineProvider`
-- [@mantine/notifications](https://mantine.dev/others/notifications/) package now exports `notifications` object that includes functions to show, update, hide, clean and clean queue
-- [@mantine/nprogress](https://mantine.dev/others/nprogress/), [@mantine/modals](https://mantine.dev/others/modals/) and [@mantine/spotlight](https://mantine.dev/others/spotlight/) packages now exports `nprogress`, `modals` and `spotlight` objects with all package methods
-- [use-os](https://mantine.dev/hooks/use-os/) hook now sets initial value in `useLayoutEffect` by default (configurable with option) to avoid hydration mismatches
-- [use-id](https://mantine.dev/hooks/use-id/) hook now always generate random id when component is mounted to replace id generated by `React.useId` hook. This change prevents browser from showing incorrect autocomplete suggestions for inputs.
-- [Timeline](https://mantine.dev/core/timeline/) component now supports `root` Styles API selector
-- [SegmentedControl](https://mantine.dev/core/segmented-control/) component now supports `readOnly` prop
-- [Kbd](https://mantine.dev/core/kbd/) component now supports `size` prop
-- [use-form](https://mantine.dev/form/values/) now supports `form.getTransformedValues` handler
-- [Tooltip](https://mantine.dev/core/tooltip/) now has better color contrast with dark color scheme
-- [Highlight](https://mantine.dev/core/highlight/) component now supports changing styles per highlighted substring
-- [JsonInput](https://mantine.dev/core/json-input/) component now supports `serialize` and `deserialize` props to allow custom JSON formats
-- [Modals manager](https://mantine.dev/others/modals/) now supports type safe context modals
-- [@mantine/form](https://mantine.dev/form/validators/) now exports new `matchesField` validator
-- [form.getInputProps](https://mantine.dev/form/validators/) `withError` parameter is now true by default for all inputs
-- New [use-headroom](https://mantine.dev/hooks/use-headroom/) hook
+- [@k-link/notifications](https://k-link.dev/others/notifications/) package now exports `notifications` object that includes functions to show, update, hide, clean and clean queue
+- [@k-link/nprogress](https://k-link.dev/others/nprogress/), [@k-link/modals](https://k-link.dev/others/modals/) and [@k-link/spotlight](https://k-link.dev/others/spotlight/) packages now exports `nprogress`, `modals` and `spotlight` objects with all package methods
+- [use-os](https://k-link.dev/hooks/use-os/) hook now sets initial value in `useLayoutEffect` by default (configurable with option) to avoid hydration mismatches
+- [use-id](https://k-link.dev/hooks/use-id/) hook now always generate random id when component is mounted to replace id generated by `React.useId` hook. This change prevents browser from showing incorrect autocomplete suggestions for inputs.
+- [Timeline](https://k-link.dev/core/timeline/) component now supports `root` Styles API selector
+- [SegmentedControl](https://k-link.dev/core/segmented-control/) component now supports `readOnly` prop
+- [Kbd](https://k-link.dev/core/kbd/) component now supports `size` prop
+- [use-form](https://k-link.dev/form/values/) now supports `form.getTransformedValues` handler
+- [Tooltip](https://k-link.dev/core/tooltip/) now has better color contrast with dark color scheme
+- [Highlight](https://k-link.dev/core/highlight/) component now supports changing styles per highlighted substring
+- [JsonInput](https://k-link.dev/core/json-input/) component now supports `serialize` and `deserialize` props to allow custom JSON formats
+- [Modals manager](https://k-link.dev/others/modals/) now supports type safe context modals
+- [@k-link/form](https://k-link.dev/form/validators/) now exports new `matchesField` validator
+- [form.getInputProps](https://k-link.dev/form/validators/) `withError` parameter is now true by default for all inputs
+- New [use-headroom](https://k-link.dev/hooks/use-headroom/) hook
 
 ## Previous documentation versions
 

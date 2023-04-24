@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ThemeIcon, Text, Group, SimpleGrid, rem } from '@mantine/core';
+import { ThemeIcon, Text, Group, SimpleGrid, rem } from '@k-link/core';
 import { NEXT_STEPS_DATA } from './data';
 import { LogoWhite } from './LogoWhite';
 import useStyles from './NextSteps.styles';
@@ -52,12 +52,12 @@ export function NextSteps() {
           </ThemeIcon>
 
           <Text weight={500} size="lg">
-            Explore Mantine UI
+            Explore Klink UI
           </Text>
         </Group>
         <Text size="sm" mt="md" className={classes.uiDescription} sx={{ lineHeight: 1.6 }}>
-          Mantine UI is a set of 120+ responsive components. All components support dark/light
-          theme. It is free for everyone.
+          Klink UI is a set of 120+ responsive components. All components support dark/light theme.
+          It is free for everyone.
         </Text>
       </a>
     </SimpleGrid>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Title, Overlay, Text, Button, Container } from '@mantine/core';
-import { GithubIcon } from '@mantine/ds';
+import { Title, Overlay, Text, Button, Container } from '@k-link/core';
+import { GithubIcon } from '@k-link/ds';
 import useStyles from './Banner.styles';
 
 export function Banner() {
@@ -19,15 +19,15 @@ export function Banner() {
         />
 
         <div className={classes.body}>
-          <Text className={classes.supTitle}>Build even faster with Mantine UI</Text>
+          <Text className={classes.supTitle}>Build even faster with Klink UI</Text>
           <Title className={classes.title}>
             <span className={classes.highlight}>120+ responsive components</span>
-            <br /> built with Mantine
+            <br /> built with Klink UI
           </Title>
 
           <Text className={classes.description}>
             Build your next website even faster with premade responsive components designed and
-            built by Mantine maintainers and community. All components are free forever for
+            built by Klink UI maintainers and community. All components are free forever for
             everyone.
           </Text>
 

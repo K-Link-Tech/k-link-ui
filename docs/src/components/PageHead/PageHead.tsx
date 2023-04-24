@@ -13,13 +13,13 @@ export function PageHead({ title, description, disableTitleTemplate }: PageHeadP
 
   return (
     <>
-      <title>{disableTitleTemplate ? title : `${title} | Mantine`}</title>
+      <title>{disableTitleTemplate ? title : `${title} | Klink UI`}</title>
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <meta name="description" content={metaDescription} />
       <meta name="og:title" content={title} />
       <meta
         name="og:image"
-        content="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/Hero.png"
+        content="https://raw.githubusercontent.com/mantinedev/k-link/master/.demo/Hero.png"
       />
       <meta name="og:image:width" content="1280" />
       <meta name="og:image:height" content="640" />

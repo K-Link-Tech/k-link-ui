@@ -60,7 +60,6 @@ export default async function createPackageConfig(config: PkgConfigInput): Promi
     externals = [
       '@emotion/server/create-instance',
       'dayjs/locale/ru',
-      'klona/full',
       'highlight.js/lib/languages/typescript',
       '@emotion/cache',
       '@emotion/utils',

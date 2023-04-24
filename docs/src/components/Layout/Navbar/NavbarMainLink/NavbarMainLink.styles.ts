@@ -1,4 +1,4 @@
-import { createStyles, MantineTheme, rem } from '@mantine/core';
+import { createStyles, MantineTheme, rem } from '@k-link/core';
 
 export default createStyles((theme: MantineTheme) => ({
   mainLink: {

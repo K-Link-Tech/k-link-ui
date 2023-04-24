@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./src", "../../configuration/types", "../../tests"],
+  "exclude": ["./lib", "./esm", "./cjs"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "lib",
+    "composite": true,
+    "paths": {
+      "@k-link/hooks": ["../k-link-hooks/src"],
+      "@k-link/styles": ["../k-link-styles/src"],
+      "@k-link/utils": ["../k-link-utils/src"],
+      "@k-link/tests": ["../k-link-tests/src"],
+      "@k-link/storybook": ["../k-link-storybook/src"]
+    }
+  },
+  "references": [
+    { "path": "../k-link-hooks" },
+    { "path": "../k-link-utils" },
+    { "path": "../k-link-styles" },
+    { "path": "../k-link-tests" },
+    { "path": "../k-link-storybook" }
+  ]
+}

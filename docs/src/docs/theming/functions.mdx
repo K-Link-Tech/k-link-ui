@@ -6,22 +6,22 @@ order: 3
 search: 'rgba, lighten, darken, smallerThan, gradient'
 ---
 
-import { ThemeDemos } from '@mantine/demos';
+import { ThemeDemos } from '@k-link/demos';
 
 # Theme functions
 
-Mantine theme provides several functions that can be used to simplify writing styles.
+Klink UI theme provides several functions that can be used to simplify writing styles.
 All functions available at `theme.fn` object, for example `theme.fn.cover()`.
 
 ## Accessing theme functions
 
-You can use theme functions everywhere Mantine [theme](/theming/theme-object/) is available.
+You can use theme functions everywhere Klink UI [theme](/theming/theme-object/) is available.
 There are 4 main ways to work with theme:
 
 - [createStyles](/styles/create-styles) function
 
 ```tsx
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 const useStyles = createStyles((theme) => ({
   myCustomButton: {
@@ -33,13 +33,13 @@ const useStyles = createStyles((theme) => ({
 - [sx prop](/styles/sx/)
 
 ```tsx
-import { Box } from '@mantine/core';
+import { Box } from '@k-link/core';
 
 function Demo() {
   return (
     <Box
       sx={(theme) => ({
-        [theme.fn.largerThan('md')]: { color: 'red' },
+        [theme.fn.largerThan('md')]: { color: 'error' },
       })}
     />
   );
@@ -49,14 +49,14 @@ function Demo() {
 - `styles` component prop
 
 ```tsx
-import { Slider } from '@mantine/core';
+import { Slider } from '@k-link/core';
 
 function Demo() {
   return (
     <Slider
       styles={(theme) => ({
         track: {
-          background: theme.fn.linearGradient(45, 'red', 'blue'),
+          background: theme.fn.linearGradient(45, 'error', 'blue'),
         },
       })}
     />
@@ -67,23 +67,23 @@ function Demo() {
 - `useMantineTheme` hook
 
 ```tsx
-import { useMantineTheme } from '@mantine/core';
+import { useMantineTheme } from '@k-link/core';
 
 function Demo() {
   const theme = useMantineTheme();
-  return <div style={{ background: theme.fn.linearGradient(45, 'red', 'blue') }} />;
+  return <div style={{ background: theme.fn.linearGradient(45, 'error', 'blue') }} />;
 }
 ```
 
 ## focusStyles
 
-All Mantine components have custom focus ring styles which are based on [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+All Klink UI components have custom focus ring styles which are based on [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 pseudo-class. It is important to keep styles consistent across all of your application components and you should
-include Mantine focus styles to your custom interactive elements. `theme.fn.focusStyles` function lets you spread Mantine focus styles
+include Klink UI focus styles to your custom interactive elements. `theme.fn.focusStyles` function lets you spread Klink UI focus styles
 without providing any additional parameters:
 
 ```tsx
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 const useStyles = createStyles((theme) => ({
   myCustomButton: {
@@ -103,11 +103,11 @@ function MyCustomButton() {
 
 ## fontStyles
 
-With `theme.fn.fontStyles` function you can add font styles from your Mantine theme to any element.
+With `theme.fn.fontStyles` function you can add font styles from your Klink UI theme to any element.
 Function returns font-family and font-smoothing styles:
 
 ```tsx
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 const useStyles = createStyles((theme) => ({
   myCustomText: {
@@ -126,18 +126,18 @@ function MyCustomText() {
 `theme.fn.smallerThan` and `theme.fn.largerThan` function can help you write responsive styles with `theme.breakpoints`:
 
 ```tsx
-// 0.0625rem (1px) is substracted from smallerThan breakpoints to avoid collisions with largerThan breakpoints
-theme.fn.smallerThan(768); // -> `@media (max-width: 47.9375em)`
-theme.fn.smallerThan('lg'); // -> `@media (max-width: ${em(getBreakpointValue(theme.breakpoints.sm) - 1)}`
+theme.fn.smallerThan(768); // -> `@media (max-width: 48em)`
+theme.fn.smallerThan('lg'); // -> `@media (max-width: ${theme.breakpoints.lg})`
 
-theme.fn.largerThan('sm'); // -> `@media (min-width: ${theme.breakpoints.sm'})`
-theme.fn.largerThan(768); // -> `@media (min-width: 48em)`
+// 0.0625rem is added to largerThan breakpoints to avoid collisions with smallerThan breakpoints
+theme.fn.largerThan('sm'); // -> `@media (min-width: ${theme.breakpoints.sm + '0.0625em'})`
+theme.fn.largerThan(768); // -> `@media (min-width: 48.0625em)`
 ```
 
 You can use both functions as a replacement for regular media query syntax in `createStyles` function, `styles` and `sx` props:
 
 ```tsx
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 const useStyles = createStyles((theme) => ({
   myResponsiveText: {
@@ -166,12 +166,12 @@ If you need anything more complex – you will need to write it from scratch:
 
 ```tsx
 theme.fn.linearGradient(24, '#000', '#fff'); // -> linear-gradient(24deg, #000 0%, #fff 100%)
-theme.fn.linearGradient(133, 'blue', 'red', 'orange', 'cyan', 'white');
-// -> linear-gradient(133deg, blue 0%, red 25%, orange 50%, cyan 75%, white 100%)'
+theme.fn.linearGradient(133, 'blue', 'error', 'orange', 'blue_light', 'white');
+// -> linear-gradient(133deg, blue 0%, error 25%, orange 50%, blue_light 75%, white 100%)'
 
 theme.fn.radialGradient('#000', '#fff'); // -> radial-gradient(circle, #000 0%, #fff 100%)
-theme.fn.radialGradient('blue', 'red', 'orange', 'cyan', 'white');
-// -> radial-gradient(circle, blue 0%, red 25%, orange 50%, cyan 75%, white 100%)
+theme.fn.radialGradient('blue', 'error', 'orange', 'blue_light', 'white');
+// -> radial-gradient(circle, blue 0%, error 25%, orange 50%, blue_light 75%, white 100%)
 ```
 
 ## gradient
@@ -228,7 +228,7 @@ theme.fn.primaryShade('dark'); // -> returns primary shade for dark color scheme
 theme.fn.primaryShade('light'); // -> returns primary shade for light color scheme
 
 // Use function to dynamically get values from theme.colors
-theme.colors.red[theme.fn.primaryShade()];
+theme.colors.error[theme.fn.primaryShade()];
 ```
 
 ## primaryColor

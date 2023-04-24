@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Text, Box, Anchor, rem } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { Text, Box, Anchor, rem } from '@k-link/core';
+import { Prism } from '@k-link/prism';
 
 const code = `
-import { createStyles } from '@mantine/core';
+import { createStyles } from '@k-link/core';
 
 const useStyles = createStyles({
   parent: {

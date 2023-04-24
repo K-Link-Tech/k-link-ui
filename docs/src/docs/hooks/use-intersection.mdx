@@ -1,17 +1,17 @@
 ---
-group: 'mantine-hooks'
-package: '@mantine/hooks'
+group: 'k-link-hooks'
+package: '@k-link/hooks'
 category: 'dom'
 title: 'use-intersection'
 order: 1
 slug: /hooks/use-intersection/
 description: 'Get information about intersection of given element with its scroll container'
-import: "import { useIntersection } from '@mantine/hooks';"
+import: "import { useIntersection } from '@k-link/hooks';"
 docs: 'hooks/use-intersection.mdx'
-source: 'mantine-hooks/src/use-intersection/use-intersection.ts'
+source: 'k-link-hooks/src/use-intersection/use-intersection.ts'
 ---
 
-import { HooksDemos } from '@mantine/demos';
+import { HooksDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -43,7 +43,7 @@ const { ref, entry } = useIntersection();
 // With regular element:
 <div ref={ref}>Observed</div>
 
-// With Mantine component:
+// With Klink UI component:
 <Paper ref={ref}>Observed</Paper>
 ```
 

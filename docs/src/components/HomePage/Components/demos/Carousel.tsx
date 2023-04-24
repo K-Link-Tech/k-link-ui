@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { CarouselCardsDemos } from '@mantine/demos';
-import { Embla } from '@mantine/carousel';
+import { CarouselCardsDemos } from '@k-link/demos';
+import { Embla } from '@k-link/carousel';
 
 export function Carousel() {
   const [embla, setEmbla] = useState<Embla>(null);

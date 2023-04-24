@@ -12,9 +12,9 @@ import { PackagesInstallation } from '../../components/PackagesInstallation/Pack
 
 ## Get started with template
 
-The easiest way to get started is to use [default](https://github.com/mantinedev/mantine-next-template) or [minimal template](https://github.com/mantinedev/mantine-minimal-next-template) on GitHub:
+The easiest way to get started is to use [default](https://github.com/mantinedev/k-link-next-template) or [minimal template](https://github.com/mantinedev/k-link-minimal-next-template) on GitHub:
 
-1. Open [default template](https://github.com/mantinedev/mantine-next-template) or [minimal template](https://github.com/mantinedev/mantine-minimal-next-template)
+1. Open [default template](https://github.com/mantinedev/k-link-next-template) or [minimal template](https://github.com/mantinedev/k-link-minimal-next-template)
 2. Click `Use this template` button
 3. Clone or download the repository
 4. Install dependencies: `yarn`
@@ -28,12 +28,12 @@ Init new application:
 yarn create next-app --typescript
 ```
 
-<PackagesInstallation extraPackages={['@mantine/next', '@emotion/server']} />
+<PackagesInstallation extraPackages={['@k-link/next', '@emotion/server']} />
 
 Create `pages/_document.tsx` file:
 
 ```tsx
-import { createGetInitialProps } from '@mantine/next';
+import { createGetInitialProps } from '@k-link/next';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 const getInitialProps = createGetInitialProps();
@@ -55,12 +55,12 @@ export default class _Document extends Document {
 }
 ```
 
-Add [MantineProvider](/theming/mantine-provider/) to `pages/_app.tsx`:
+Add [MantineProvider](/theming/k-link-provider/) to `pages/_app.tsx`:
 
 ```tsx
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -96,11 +96,11 @@ npm run dev
 ## Create your own getInitialProps
 
 In some cases you will need to have access to `getInitialProps` in Next Document,
-for that you will need to setup Mantine ssr styles extraction on your side:
+for that you will need to setup Klink UI ssr styles extraction on your side:
 
 ```tsx
 import Document, { DocumentContext } from 'next/document';
-import { ServerStyles, createStylesServer } from '@mantine/next';
+import { ServerStyles, createStylesServer } from '@k-link/next';
 
 // optional: you can provide your cache as a first argument in createStylesServer function
 const stylesServer = createStylesServer();

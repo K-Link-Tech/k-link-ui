@@ -13,12 +13,12 @@ import {
   AccordionDemos,
   ThemeDemos,
   InputDemos,
-} from '@mantine/demos';
-import { Slider as SliderStylesApi, Button as ButtonStylesApi } from '@mantine/styles-api';
+} from '@k-link/demos';
+import { Slider as SliderStylesApi, Button as ButtonStylesApi } from '@k-link/styles-api';
 
 # Styles API
 
-With Styles API you can overwrite styles of inner elements in Mantine components with `classNames` or
+With Styles API you can overwrite styles of inner elements in Klink UI components with `classNames` or
 `styles` props.
 
 ## Styling with classNames
@@ -38,7 +38,7 @@ styles names table. The name column will tell you how to target a specific eleme
   head={['Name', 'Static selector', 'Description']}
   data={Object.keys(SliderStylesApi).map((name) => [
     name,
-    `.mantine-Slider-${name}`,
+    `.k-link-Slider-${name}`,
     SliderStylesApi[name],
   ])}
 />
@@ -50,14 +50,14 @@ For example, if you want to add styles to slider thumb:
 <Slider classNames={{ thumb: 'my-slider-thumb' }} />
 
 // Add inline styles to thumb
-<Slider styles={{ thumb: { backgroundColor: 'red' } }} />
+<Slider styles={{ thumb: { backgroundColor: 'error' } }} />
 ```
 
 Now you can write styles for your component with createStyles function
 or any other styling tools and languages:
 
 ```tsx
-import { Slider, createStyles, rem } from '@mantine/core';
+import { Slider, createStyles, rem } from '@k-link/core';
 
 const useStyles = createStyles((theme) => ({
   track: {
@@ -112,7 +112,7 @@ Styles names for button component:
   head={['Name', 'Static selector', 'Description']}
   data={Object.keys(ButtonStylesApi).map((name) => [
     name,
-    `.mantine-Button-${name}`,
+    `.k-link-Button-${name}`,
     ButtonStylesApi[name],
   ])}
 />
@@ -133,7 +133,7 @@ All styles defined there will be added to each component rendered inside provide
 If component does not specify Styles API selectors, then in most cases you can add styles using `root` selector:
 
 ```tsx
-import { MantineProvider, Text } from '@mantine/core';
+import { MantineProvider, Text } from '@k-link/core';
 
 function App() {
   return (
@@ -170,15 +170,15 @@ You can use them to apply your styles if you do not use CSS modules or just do n
 
 ## Unstyled components
 
-All Mantine components support `unstyled` prop which removes all non-essential Mantine styles
+All Klink UI components support `unstyled` prop which removes all non-essential Klink UI styles
 from the component. This is useful when you want to add new components styles with Styles API
 without overriding default styles.
 
-Unstyled [Tabs](https://mantine.dev/core/tabs/):
+Unstyled [Tabs](https://k-link.dev/core/tabs/):
 
 <Demo data={TabsDemos.unstyled} demoProps={{ toggle: true }} />
 
-Unstyled [Accordion](https://mantine.dev/core/accordion/):
+Unstyled [Accordion](https://k-link.dev/core/accordion/):
 
 <Demo data={AccordionDemos.unstyled} demoProps={{ toggle: true }} />
 

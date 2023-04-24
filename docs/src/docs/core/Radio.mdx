@@ -1,6 +1,6 @@
 ---
-group: 'mantine-core'
-package: '@mantine/core'
+group: 'k-link-core'
+package: '@k-link/core'
 title: Radio
 order: 1
 slug: /core/radio/
@@ -8,13 +8,13 @@ category: 'inputs'
 description: 'Wrapper for input type radio'
 componentPrefix: 'Radio'
 props: ['Radio', 'RadioGroup']
-import: "import { Radio } from '@mantine/core';"
-source: 'mantine-core/src/Radio/Radio.tsx'
+import: "import { Radio } from '@k-link/core';"
+source: 'k-link-core/src/Radio/Radio.tsx'
 docs: 'core/Radio.mdx'
 styles: ['Radio']
 ---
 
-import { RadioDemos } from '@mantine/demos';
+import { RadioDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -24,7 +24,7 @@ import { RadioDemos } from '@mantine/demos';
 
 ```tsx
 import { useState } from 'react';
-import { Radio } from '@mantine/core';
+import { Radio } from '@k-link/core';
 
 function Demo() {
   const [checked, setChecked] = useState(false);
@@ -40,7 +40,7 @@ function Demo() {
 
 ```tsx
 import { useState } from 'react';
-import { Radio } from '@mantine/core';
+import { Radio } from '@k-link/core';
 
 function Demo() {
   const [value, setValue] = useState('react');
@@ -67,7 +67,7 @@ function Demo() {
 
 ```tsx
 import { useRef } from 'react';
-import { Radio } from '@mantine/core';
+import { Radio } from '@k-link/core';
 
 function Demo() {
   const ref = useRef<HTMLInputElement>(null);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { IconArrowRight } from '@tabler/icons-react';
-import { Text, SimpleGrid, Slider, Button, rem } from '@mantine/core';
-import { Prism } from '@mantine/prism';
-import { Slider as SliderStylesApi } from '@mantine/styles-api';
+import { Text, SimpleGrid, Slider, Button, rem } from '@k-link/core';
+import { Prism } from '@k-link/prism';
+import { Slider as SliderStylesApi } from '@k-link/styles-api';
 import DataTable from '../../MdxPage/MdxProvider/DataTable/DataTable';
 import { PageSection } from '../PageSection/PageSection';
 import { getGradient } from '../get-gradient';
@@ -46,7 +46,7 @@ export function Customize() {
   return (
     <PageSection
       title="Styles overriding"
-      description="Each Mantine component supports styles overriding for every internal element inside with classes or inline styles. This feature alongside other customization options allows you to implement any visual modifications to components and adapt them to fit almost any design requirements."
+      description="Each Klink UI component supports styles overriding for every internal element inside with classes or inline styles. This feature alongside other customization options allows you to implement any visual modifications to components and adapt them to fit almost any design requirements."
       sx={(theme) => ({
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       })}

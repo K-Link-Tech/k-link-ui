@@ -1,0 +1,44 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./src", "./types", "../../configuration/types"],
+  "exclude": ["./lib", "./esm", "./cjs"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "lib",
+    "composite": true,
+    "paths": {
+      "@k-link/core": ["../k-link-core/src"],
+      "@k-link/dates": ["../k-link-dates/src"],
+      "@k-link/hooks": ["../k-link-hooks/src"],
+      "@k-link/prism": ["../k-link-prism/src"],
+      "@k-link/dropzone": ["../k-link-dropzone/src"],
+      "@k-link/notifications": ["../k-link-notifications/src"],
+      "@k-link/modals": ["../k-link-modals/src"],
+      "@k-link/nprogress": ["../k-link-nprogress/src"],
+      "@k-link/form": ["../k-link-form/src"],
+      "@k-link/ds": ["../k-link-ds/src"],
+      "@k-link/spotlight": ["../k-link-spotlight/src"],
+      "@k-link/carousel": ["../k-link-carousel/src"],
+      "@k-link/tiptap": ["../k-link-tiptap/src"]
+    }
+  },
+  "references": [
+    { "path": "../k-link-core" },
+    { "path": "../k-link-dates" },
+    { "path": "../k-link-hooks" },
+    { "path": "../k-link-prism" },
+    { "path": "../k-link-dropzone" },
+    { "path": "../k-link-carousel" },
+    { "path": "../k-link-notifications" },
+    { "path": "../k-link-modals" },
+    { "path": "../k-link-nprogress" },
+    { "path": "../k-link-spotlight" },
+    { "path": "../k-link-form" },
+    { "path": "../k-link-ds" },
+    { "path": "../k-link-tiptap" }
+  ]
+}

@@ -6,22 +6,22 @@ slug: /theming/default-props/
 search: 'Default props for components on MantineProvider'
 ---
 
-import { ThemeDemos } from '@mantine/demos';
+import { ThemeDemos } from '@k-link/demos';
 
 # Default props
 
-You can define default props for every Mantine component by setting `theme.components` on
-[MantineProvider](/theming/mantine-provider):
+You can define default props for every Klink UI component by setting `theme.components` on
+[MantineProvider](/theming/k-link-provider):
 
 <Demo data={ThemeDemos.defaultProps} />
 
 ## Overriding default props
 
-Default props defined on [MantineProvider](/theming/mantine-provider) will be overridden with
+Default props defined on [MantineProvider](/theming/k-link-provider) will be overridden with
 props that you set on component itself:
 
 ```tsx
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@k-link/core';
 
 function Demo() {
   return (
@@ -29,13 +29,13 @@ function Demo() {
       theme={{
         components: {
           Button: {
-            defaultProps: { color: 'red' },
+            defaultProps: { color: 'error' },
           },
         },
       }}
     >
       <Button>Red color, defined with defaultProps</Button>
-      <Button color="cyan">Cyan color, overridden by prop</Button>
+      <Button color="blue_light">Cyan color, overridden by prop</Button>
     </MantineProvider>
   );
 }
@@ -52,7 +52,7 @@ have associated static components: `Menu.Item`, `Tabs.List`, `RichTextEditor.Too
 default props to these components by omitting the dot from component name:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -60,7 +60,7 @@ function Demo() {
       theme={{
         components: {
           MenuItem: {
-            defaultProps: { color: 'red' },
+            defaultProps: { color: 'error' },
           },
 
           TabsList: {
@@ -90,11 +90,11 @@ MantineProvider uses `Record<string, any>` type for default props types to impro
 If you need more strict type checks or want to have IDE autocomplete, you should define default props separately:
 
 ```tsx
-import { MantineProvider, ButtonProps, SwitchProps } from '@mantine/core';
+import { MantineProvider, ButtonProps, SwitchProps } from '@k-link/core';
 
 const ButtonDefaultProps: Partial<ButtonProps> = {
   size: 'xs',
-  color: 'cyan',
+  color: 'blue_light',
 };
 
 const SwitchDefaultProps: Partial<SwitchProps> = {

@@ -1,0 +1,40 @@
+{
+  "name": "@k-link/ssr",
+  "description": "Klink UI server side rendering utils",
+  "version": "1.3.2",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "sideEffects": false,
+  "homepage": "https://k-link.dev",
+  "repository": {
+    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "type": "git",
+    "directory": "src/k-link-ssr"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "gatsby",
+    "gatsbyjs",
+    "ssr",
+    "server",
+    "server-side",
+    "server-side-rendering",
+    "render"
+  ],
+  "peerDependencies": {
+    "@emotion/react": ">=11.9.0",
+    "@emotion/server": ">=11.4.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@k-link/styles": "1.3.2",
+    "html-react-parser": "1.4.12"
+  },
+  "devDependencies": {}
+}

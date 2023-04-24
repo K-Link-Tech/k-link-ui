@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Container, Grid, UnstyledButton, Text, Box, rem } from '@mantine/core';
+import { Container, Grid, UnstyledButton, Text, Box, rem } from '@k-link/core';
 import { IconForms } from '@tabler/icons-react';
-import { useMediaQuery } from '@mantine/hooks';
+import { useMediaQuery } from '@k-link/hooks';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import useStyles from './DemoTabs.styles';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { Code, Anchor, rem } from '@mantine/core';
-import { Prism } from '@mantine/prism';
-import { Demo } from '@mantine/ds';
+import { Code, Anchor, rem } from '@k-link/core';
+import { Prism } from '@k-link/prism';
+import { Demo } from '@k-link/ds';
 import { KeyboardEventsTable } from './KeyboardEventsTable/KeyboardEventsTable';
 import GatsbyLink from './GatsbyLink/GatsbyLink';
 import DataTable from './DataTable/DataTable';
@@ -23,10 +23,10 @@ export const components = {
   h6: h(6),
   inlineCode: (props: any) => <Code {...props} />,
   a: ({ href, children }: { href: string; children: string }) => {
-    const replaced = href.replace('https://mantine.dev', '');
+    const replaced = href.replace('https://k-link.dev', '');
 
     if (!replaced.startsWith('http') && replaced.trim().length > 0) {
-      return <GatsbyLink to={href.replace('https://mantine.dev', '')}>{children}</GatsbyLink>;
+      return <GatsbyLink to={href.replace('https://k-link.dev', '')}>{children}</GatsbyLink>;
     }
 
     return <Anchor href={href}>{children}</Anchor>;

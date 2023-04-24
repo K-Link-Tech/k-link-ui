@@ -1,4 +1,4 @@
-import { createStyles, keyframes, rem } from '@mantine/core';
+import { createStyles, keyframes, rem } from '@k-link/core';
 
 const fadeId = keyframes({
   from: { opacity: 0, transform: `translateY(-${rem(20)}) scale(0.95) skewX(-2deg)` },

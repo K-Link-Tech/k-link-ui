@@ -1,7 +1,7 @@
 import React from 'react';
-import { Space, Box, useMantineTheme } from '@mantine/core';
-import { TimelineDemos } from '@mantine/demos';
-import { Demo } from '@mantine/ds';
+import { Space, Box, useMantineTheme } from '@k-link/core';
+import { TimelineDemos } from '@k-link/demos';
+import { Demo } from '@k-link/ds';
 import { PageSection } from '../PageSection/PageSection';
 
 export function CustomizeWithProps() {
@@ -9,7 +9,7 @@ export function CustomizeWithProps() {
   return (
     <PageSection
       title="Customize components"
-      description="Every Mantine component supports visual customizations with props – you can quickly prototype and experiment by just modifying component props:"
+      description="Every Klink UI component supports visual customizations with props – you can quickly prototype and experiment by just modifying component props:"
       sx={{
         backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
       }}

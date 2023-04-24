@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Text, Box, Anchor } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { Text, Box, Anchor } from '@k-link/core';
+import { Prism } from '@k-link/prism';
 
 const code = `
-import { Text } from '@mantine/core';
+import { Text } from '@k-link/core';
 
 function Demo() {
   return (
@@ -31,7 +31,7 @@ export function FunctionsDemo() {
         <Anchor component={Link} to="/theming/functions/">
           theme functions
         </Anchor>{' '}
-        anywhere where Mantine theme is available:
+        anywhere where Klink UI theme is available:
       </Text>
       <Prism
         language="tsx"

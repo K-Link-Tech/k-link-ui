@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Text, Highlight, useMantineTheme, rem } from '@mantine/core';
+import { Table, Text, Highlight, useMantineTheme, rem } from '@k-link/core';
 import DocsSection from '../../../DocsSection/DocsSection';
 import PROPS_DATA from '../../../../../.docgen/docgen.json';
 
@@ -29,7 +29,7 @@ export default function PropsTable({ component, query }: PropsTableProps) {
             </Highlight>
 
             {prop.required && (
-              <Text component="sup" color="red" size="xs">
+              <Text component="sup" color="error" size="xs">
                 {' '}
                 *
               </Text>
@@ -37,7 +37,7 @@ export default function PropsTable({ component, query }: PropsTableProps) {
           </td>
           <td style={{ verticalAlign: 'middle' }}>
             <Text
-              color={theme.colorScheme === 'dark' ? 'red' : 'indigo'}
+              color={theme.colorScheme === 'dark' ? 'error' : 'indigo'}
               size="xs"
               weight={500}
               sx={{ fontFamily: 'Menlo, Monaco, Lucida Console, monospace' }}

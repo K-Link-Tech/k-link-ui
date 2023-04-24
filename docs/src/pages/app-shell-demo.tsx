@@ -9,7 +9,7 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
-} from '@mantine/core';
+} from '@k-link/core';
 
 export default function AppShellDemo() {
   const theme = useMantineTheme();

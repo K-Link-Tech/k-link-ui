@@ -1,32 +1,32 @@
 ---
-title: 'Contribute to Mantine'
+title: 'Contribute to Klink UI'
 ---
 
-# Contributing to Mantine
+# Contributing to Klink UI
 
-First of all, thank you for showing interest in contributing to Mantine! All your contributions are extremely valuable to the project!
+First of all, thank you for showing interest in contributing to Klink UI! All your contributions are extremely valuable to the project!
 
 ## Ways to contribute
 
 - **Improve documentation:** Fix incomplete or missing docs, bad wording, examples or explanations.
-- **Give feedback:** We are constantly working on making Mantine better. Please share how you use Mantine, what features are missing and what is done well via [GitHub Discussions](https://github.com/mantinedev/mantine/discussions/new) or [Discord](https://discord.gg/wbH82zuWMN).
-- **Share Mantine:** Share links to the Mantine docs with everyone who might be interested! [Share Mantine on Twitter here](https://twitter.com/intent/tweet?text=Mantine%20%E2%80%93%20new%20React%20library%20with%20100%2B%20components%20and%20hooks.%20It%20has%20native%20dark%20theme%20support%20and%20focuses%20on%20accessibility%20and%20usability.%0A%0Ahttp%3A%2F%2Fmantine.dev%0A%0A%23reactjs%20).
-- **Contribute to the codebase:** Propose new features via [GitHub Issues](https://github.com/mantinedev/mantine/issues/new), or find an [existing issue](https://github.com/mantinedev/mantine/labels/help%20wanted) that you are interested in and work on it!
-- **Give us a code review:** Help us identify problems with the [source code](https://github.com/mantinedev/mantine/tree/master/src) or make Mantine more performant.
+- **Give feedback:** We are constantly working on making Klink UI better. Please share how you use Klink UI, what features are missing and what is done well via [GitHub Discussions](https://github.com/mantinedev/k-link/discussions/new) or [Discord](https://discord.gg/wbH82zuWMN).
+- **Share Klink UI:** Share links to the Klink UI docs with everyone who might be interested! [Share Klink UI on Twitter here](https://twitter.com/intent/tweet?text=Klink UI%20%E2%80%93%20new%20React%20library%20with%20100%2B%20components%20and%20hooks.%20It%20has%20native%20dark%20theme%20support%20and%20focuses%20on%20accessibility%20and%20usability.%0A%0Ahttp%3A%2F%2Fmantine.dev%0A%0A%23reactjs%20).
+- **Contribute to the codebase:** Propose new features via [GitHub Issues](https://github.com/mantinedev/k-link/issues/new), or find an [existing issue](https://github.com/mantinedev/k-link/labels/help%20wanted) that you are interested in and work on it!
+- **Give us a code review:** Help us identify problems with the [source code](https://github.com/mantinedev/k-link/tree/master/src) or make Klink UI more performant.
 
 ## Contributing workflow
 
 - Decide on what you want to contribute.
-- If you want to implement a new feature, discuss it with the maintainer ([GitHub Discussions](https://github.com/mantinedev/mantine/discussions/new) or [Discord](https://discord.gg/wbH82zuWMN)) before jumping into coding.
+- If you want to implement a new feature, discuss it with the maintainer ([GitHub Discussions](https://github.com/mantinedev/k-link/discussions/new) or [Discord](https://discord.gg/wbH82zuWMN)) before jumping into coding.
 - After finalizing issue details, as you begin working on the code, please make sure to follow commit conventions.
 - Run tests with `npm test` and submit a PR once all tests have passed.
 - Get a code review and fix all issues noticed by the maintainer.
-- If you cannot finish your task or if you change your mind – that's totally fine! Just let us know in the GitHub issue that you created during the first step of this process. The Mantine community is friendly – we won't judge or ask any questions if you decide to cancel your submission.
+- If you cannot finish your task or if you change your mind – that's totally fine! Just let us know in the GitHub issue that you created during the first step of this process. The Klink UI community is friendly – we won't judge or ask any questions if you decide to cancel your submission.
 - Your PR is merged. You are awesome!
 
 ## Commit convention
 
-Mantine is a monorepo, thus it is important to write correct commit messages to keep the git history clean and consistent.
+Klink UI is a monorepo, thus it is important to write correct commit messages to keep the git history clean and consistent.
 All commits made in this repository are divided into 3 groups:
 
 - **package commits** Related to any particular package.
@@ -43,28 +43,28 @@ Examples:
 
 - `[core] Fix documentation deployment script` – Change made in repository script, it is not related to documentation or any package
 - `[docs] Update report issues link` – Change related to documentation website
-- `[@mantine/core] Button: Add theme focus styles` – Change in `@mantine/core` package at Button component
-- `[@mantine/hooks] use-list-state: Add remove handler` – Change in `@mantine/hooks` package at use-list-state hook
+- `[@k-link/core] Button: Add theme focus styles` – Change in `@k-link/core` package at Button component
+- `[@k-link/hooks] use-list-state: Add remove handler` – Change in `@k-link/hooks` package at use-list-state hook
 
 ## Git branches
 
 - **master** – current version, patches for current minor version (1.0.x)
 - **dev** – contains next minor version (1.x.0) - Most likely, you will want to create a PR to this branch.
 
-## Get started with Mantine locally
+## Get started with Klink UI locally
 
 - Install the [editorconfig](https://editorconfig.org/) extension for your editor.
-- Fork the [repository](https://github.com/mantinedev/mantine), then clone or download your fork.
+- Fork the [repository](https://github.com/mantinedev/k-link), then clone or download your fork.
 - Install dependencies with yarn – `yarn`
 - Build local version of all packages – `npm run build:all`
-- Build local version of specific packages – `npm run build @mantine/core @mantine/demos @mantine/hooks`
+- Build local version of specific packages – `npm run build @k-link/core @k-link/demos @k-link/hooks`
 - To start storybook – `npm run storybook`
 - To start docs – `npm run docs`
 - To rebuild props descriptions – `npm run docs:docgen`
 
 ## npm scripts
 
-All npm scripts are located at [main package.json](https://github.com/mantinedev/mantine/blob/master/package.json).
+All npm scripts are located at [main package.json](https://github.com/mantinedev/k-link/blob/master/package.json).
 Individual packages do not have dedicated scripts.
 
 ### Development scripts
@@ -82,7 +82,7 @@ Individual packages do not have dedicated scripts.
 
 ### Docs scripts
 
-- `docs:docgen` – generates components types information with [docgen script](https://github.com/mantinedev/mantine/blob/master/scripts/docgen.ts)
+- `docs:docgen` – generates components types information with [docgen script](https://github.com/mantinedev/k-link/blob/master/scripts/docgen.ts)
 - `docs:sizes` – generates bundle size information for all packages
 - `docs:clean` – runs `gatsby clean`
 - `docs:build` – runs all above docs scripts and build production docs bundle

@@ -1,6 +1,6 @@
 ---
-group: 'mantine-core'
-package: '@mantine/core'
+group: 'k-link-core'
+package: '@k-link/core'
 title: Button
 order: 1
 polymorphic: true
@@ -9,13 +9,13 @@ category: 'buttons'
 description: 'Render button or link with button styles from mantine theme'
 componentPrefix: 'Button'
 props: ['Button', 'ButtonGroup']
-import: "import { Button } from '@mantine/core';"
-source: 'mantine-core/src/Button/Button.tsx'
+import: "import { Button } from '@k-link/core';"
+source: 'k-link-core/src/Button/Button.tsx'
 docs: 'core/Button.mdx'
 styles: ['Button']
 ---
 
-import { ButtonDemos } from '@mantine/demos';
+import { ButtonDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -66,7 +66,7 @@ You can control loading state and [Loader](/core/loader/) component with followi
 ## Full width and overflow
 
 Button can take full width of container if you set `fullWidth` prop.
-If button content is too large for its container, overflown content will be hidden:
+If button is too large for its container, overflow content will be hidden:
 
 <Demo data={ButtonDemos.overflow} />
 
@@ -77,7 +77,7 @@ If button content is too large for its container, overflown content will be hidd
 Note that you cannot wrap child `Button` components with any additional elements:
 
 ```tsx
-import { Button } from '@mantine/core';
+import { Button } from '@k-link/core';
 
 function Demo() {
   return (
@@ -95,7 +95,7 @@ If you want to use [Tooltip](/core/tooltip/), [Popover](/core/popover/) or other
 it is required to set `withinPortal` prop:
 
 ```tsx
-import { Button, Tooltip } from '@mantine/core';
+import { Button, Tooltip } from '@k-link/core';
 
 function Demo() {
   return (
@@ -119,14 +119,14 @@ Button has the following attributes on the root element:
 You can customize disabled and loading styles with these attributes:
 
 ```tsx
-import { Button } from '@mantine/core';
+import { Button } from '@k-link/core';
 
 function Demo() {
   return (
     <Button
       sx={{
         '&[data-disabled]': { opacity: 0.4 },
-        '&[data-loading]': { backgroundColor: 'red' },
+        '&[data-loading]': { backgroundColor: 'error' },
       }}
     />
   );
@@ -150,7 +150,7 @@ Button is a [polymorphic component](/guides/polymorphic/), you can change root e
 
 ```tsx
 import { useRef } from 'react';
-import { Button } from '@mantine/core';
+import { Button } from '@k-link/core';
 
 function Demo() {
   const ref = useRef<HTMLButtonElement>(null);

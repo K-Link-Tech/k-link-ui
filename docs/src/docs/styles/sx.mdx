@@ -8,7 +8,7 @@ search: 'Inline styles with emotion'
 
 # sx prop
 
-All Mantine components support `sx` prop. With `sx` you can add styles to component **root** element.
+All Klink UI components support `sx` prop. With `sx` you can add styles to component **root** element.
 If you need to customize styles of other elements within component use [Styles API](/styles/styles-api/).
 
 ## sx object
@@ -18,7 +18,7 @@ Styles added with `sx` will be parsed by [emotion](https://emotion.sh)
 and added to the `head` or specified target container in [emotion cache](/theming/emotion-cache/).
 
 ```tsx
-import { Text } from '@mantine/core';
+import { Text } from '@k-link/core';
 
 function Demo() {
   return (
@@ -32,7 +32,7 @@ function Demo() {
 You can use pseudo-classes, media queries and all other nested selectors with `sx`:
 
 ```tsx
-import { Text } from '@mantine/core';
+import { Text } from '@k-link/core';
 
 function Demo() {
   return (
@@ -58,7 +58,7 @@ function Demo() {
 Use function instead of an object to subscribe to the [theme](/theming/theme-object/):
 
 ```tsx
-import { Text } from '@mantine/core';
+import { Text } from '@k-link/core';
 
 function Demo() {
   return (
@@ -84,41 +84,41 @@ function Demo() {
 Array syntax can be used to simultaneously use `sx` prop and add it from props:
 
 ```tsx
-import { Button, Sx } from '@mantine/core';
+import { Button, Sx } from '@k-link/core';
 
 interface MyButtonProps {
   sx?: Sx;
 }
 
 function MyButton({ sx }: MyButtonProps) {
-  return <Button sx={[{ color: 'red' }, sx]}>My Button</Button>;
+  return <Button sx={[{ color: 'error' }, sx]}>My Button</Button>;
 }
 ```
 
 If you want to keep `sx` array syntax support for child component use `packSx` function:
 
 ```tsx
-import { Button, packSx, Sx } from '@mantine/core';
+import { Button, packSx, Sx } from '@k-link/core';
 
 interface MyButtonProps {
   sx?: Sx | Sx[];
 }
 
 function MyButton({ sx }: MyButtonProps) {
-  return <Button sx={[{ color: 'red' }, ...packSx(sx)]}>My Button</Button>;
+  return <Button sx={[{ color: 'error' }, ...packSx(sx)]}>My Button</Button>;
 }
 ```
 
 You will also need to use `packSx` function if you are extending [DefaultProps](/guides/custom-components/#defaultprops-type) type:
 
 ```tsx
-import { Button, packSx, DefaultProps } from '@mantine/core';
+import { Button, packSx, DefaultProps } from '@k-link/core';
 
 interface MyButtonProps extends DefaultProps {}
 
 function MyButton({ sx, ...others }: MyButtonProps) {
   return (
-    <Button sx={[{ color: 'red' }, ...packSx(sx)]} {...others}>
+    <Button sx={[{ color: 'error' }, ...packSx(sx)]} {...others}>
       My Button
     </Button>
   );
@@ -128,10 +128,10 @@ function MyButton({ sx, ...others }: MyButtonProps) {
 ## Box component
 
 [Box](/core/box/) is an utility [polymorphic](/guides/polymorphic/) component
-that can be used to style non Mantine components or elements with `sx` prop:
+that can be used to style non Klink UI components or elements with `sx` prop:
 
 ```tsx
-import { Box } from '@mantine/core';
+import { Box } from '@k-link/core';
 import { Link } from 'react-router-dom';
 
 // Box with custom element
@@ -139,7 +139,7 @@ function BoxWithElement() {
   return (
     <Box
       component="a"
-      href="https://mantine.dev"
+      href="https://k-link.dev"
       target="_blank"
       sx={(theme) => ({
         color: theme.colors.blue[5],
@@ -181,9 +181,9 @@ function BoxWithComponent() {
 To create sharable styles you can store them in a variable:
 
 ```tsx
-import { Text, Box, CSSObject, rem } from '@mantine/core';
+import { Text, Box, CSSObject, rem } from '@k-link/core';
 
-// styles object is compatible with every Mantine component
+// styles object is compatible with every Klink UI component
 const styles: CSSObject = {
   border: `${rem(1)} solid #eee`,
   color: '#999',
@@ -206,7 +206,7 @@ function Demo() {
 To store function styles in a variable you will need to use `MantineTheme` type in case you are using TypeScript:
 
 ```tsx
-import { Text, Box, CSSObject, MantineTheme, rem } from '@mantine/core';
+import { Text, Box, CSSObject, MantineTheme, rem } from '@k-link/core';
 
 const styles = (theme: MantineTheme): CSSObject => ({
   border: `${rem(1)} solid ${theme.colors.gray[3]}`,

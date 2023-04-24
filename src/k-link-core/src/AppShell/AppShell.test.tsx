@@ -1,0 +1,57 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import { itRendersChildren, itSupportsSystemProps, itSupportsProviderVariant } from '@k-link/tests';
+import { Header } from './Header/Header';
+import { Navbar } from './Navbar/Navbar';
+import { AppShell, AppShellProps } from './AppShell';
+
+const defaultProps: AppShellProps = {
+  children: 'test-app-shell',
+};
+
+describe('@k-link/core/AppShell', () => {
+  itRendersChildren(AppShell, defaultProps);
+  itSupportsProviderVariant(AppShell, defaultProps, 'AppShell');
+  itSupportsSystemProps({
+    component: AppShell,
+    props: defaultProps,
+    displayName: '@k-link/core/AppShell',
+    refType: HTMLDivElement,
+    providerName: 'AppShell',
+  });
+
+  it('sets fixed position and z-index on Header and Navbar components based on props', () => {
+    const { container: fixed } = render(
+      <AppShell
+        fixed
+        zIndex={476}
+        header={<Header height={60}>test-header</Header>}
+        navbar={<Navbar>test-navbar</Navbar>}
+      >
+        test-shell
+      </AppShell>
+    );
+
+    const { container: _static } = render(
+      <AppShell
+        fixed={false}
+        header={<Header height={60}>test-header</Header>}
+        navbar={<Navbar>test-navbar</Navbar>}
+      >
+        test-shell
+      </AppShell>
+    );
+
+    expect(_static.querySelector('.k-link-Header-root')).toHaveStyle({ position: 'static' });
+    expect(fixed.querySelector('.k-link-Header-root')).toHaveStyle({
+      zIndex: 476,
+      position: 'fixed',
+    });
+
+    expect(_static.querySelector('.k-link-Navbar-root')).toHaveStyle({ position: 'static' });
+    expect(fixed.querySelector('.k-link-Navbar-root')).toHaveStyle({
+      zIndex: 476,
+      position: 'fixed',
+    });
+  });
+});

@@ -1,0 +1,38 @@
+{
+  "name": "@k-link/styles",
+  "description": "Klink UI css-in-js styles engine, based on emotion",
+  "version": "1.3.2",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "sideEffects": false,
+  "homepage": "https://k-link.dev",
+  "repository": {
+    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "type": "git",
+    "directory": "src/k-link-styles"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "ui",
+    "library",
+    "frontend",
+    "emotion",
+    "css-in-js",
+    "styling"
+  ],
+  "peerDependencies": {
+    "@emotion/react": ">=11.9.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "clsx": "1.1.1",
+    "csstype": "3.0.9"
+  },
+  "devDependencies": {}
+}

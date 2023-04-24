@@ -1,4 +1,4 @@
-import { createStyles, rem } from '@mantine/core';
+import { createStyles, rem } from '@k-link/core';
 import { getGradient } from '../get-gradient';
 import banner from './banner.webp';
 
@@ -40,7 +40,7 @@ export default createStyles((theme) => ({
   },
 
   highlight: {
-    color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.cyan[6],
+    color: theme.colorScheme === 'dark' ? theme.colors.warning[4] : theme.colors.blue_light[6],
     backgroundImage: getGradient(theme, 'text'),
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',

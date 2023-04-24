@@ -1,14 +1,14 @@
 ---
-group: 'mantine-hooks'
-package: '@mantine/hooks'
+group: 'k-link-hooks'
+package: '@k-link/hooks'
 title: 'use-local-storage'
 category: 'state'
 order: 1
 slug: /hooks/use-local-storage/
 description: 'Use localStorage value as react state, sync state across opened tabs'
-import: "import { useLocalStorage } from '@mantine/hooks';"
+import: "import { useLocalStorage } from '@k-link/hooks';"
 docs: 'hooks/use-local-storage.mdx'
-source: 'mantine-hooks/src/use-local-storage/use-local-storage.ts'
+source: 'k-link-hooks/src/use-local-storage/use-local-storage.ts'
 ---
 
 ## Usage
@@ -17,7 +17,7 @@ source: 'mantine-hooks/src/use-local-storage/use-local-storage.ts'
 Hook works the same way as `useState`, but also writes the value to `localStorage`:
 
 ```tsx
-import { useLocalStorage } from '@mantine/hooks';
+import { useLocalStorage } from '@k-link/hooks';
 
 // hook will read value from localStorage.getItem('color-scheme')
 // if localStorage is not available or value at given key does not exist
@@ -33,11 +33,11 @@ setValue((current) => (current === 'dark' ? 'light' : 'dark'));
 
 ## Example
 
-Mantine docs website uses this hook to store color scheme information:
+Klink UI docs website uses this hook to store color scheme information:
 
 ```tsx
-import { useLocalStorage } from '@mantine/hooks';
-import { ActionIcon, ColorScheme } from '@mantine/core';
+import { useLocalStorage } from '@k-link/hooks';
+import { ActionIcon, ColorScheme } from '@k-link/core';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 
 function ColorSchemeToggle() {
@@ -63,7 +63,7 @@ Use `removeValue` callback to clean `localStorage`/`sessionStorage`.
 When value is removed it is reset to `defaultValue`:
 
 ```tsx
-import { useLocalStorage } from '@mantine/hooks';
+import { useLocalStorage } from '@k-link/hooks';
 
 const [value, setValue, removeValue] = useLocalStorage({
   key: 'color-scheme',
@@ -75,7 +75,7 @@ const [value, setValue, removeValue] = useLocalStorage({
 
 use-local-storage subscribes to [storage event](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event).
 When state changes in one tab, it automatically updates value in all other opened browser tabs.
-You can test this feature by opening 2 tabs with Mantine docs side by side and changing color scheme
+You can test this feature by opening 2 tabs with Klink UI docs side by side and changing color scheme
 (button on the top right or `⌘ + J` on MacOS and `Ctrl + J` on Windows and Linux).
 
 ## Serialize/deserialize JSON
@@ -116,7 +116,7 @@ const [value, setValue] = useLocalStorage({
 `use-session-storage` hook works the same way as `use-local-storage` hook but uses `window.sessionStorage` instead of `window.localStorage`:
 
 ```tsx
-import { useSessionStorage } from '@mantine/hooks';
+import { useSessionStorage } from '@k-link/hooks';
 
 const [value, setValue] = useSessionStorage({ key: 'session-key', defaultValue: 'mantine' });
 ```

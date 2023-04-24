@@ -1,17 +1,17 @@
 ---
-group: 'mantine-hooks'
-package: '@mantine/hooks'
+group: 'k-link-hooks'
+package: '@k-link/hooks'
 category: 'dom'
 title: 'use-hotkeys'
 order: 1
 slug: /hooks/use-hotkeys/
 description: 'Listen for keys combinations on document element'
-import: "import { useHotkeys } from '@mantine/hooks';"
+import: "import { useHotkeys } from '@k-link/hooks';"
 docs: 'hooks/use-hotkeys.mdx'
-source: 'mantine-hooks/src/use-hotkeys/use-hotkeys.ts'
+source: 'k-link-hooks/src/use-hotkeys/use-hotkeys.ts'
 ---
 
-import { HooksDemos } from '@mantine/demos';
+import { HooksDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -27,7 +27,7 @@ The second argument is a list of HTML tags:
 - `triggerOnContentEditable` - Whether shortcuts should trigger when based on contentEditable
 
 ```tsx
-import { useHotkeys } from '@mantine/hooks';
+import { useHotkeys } from '@k-link/hooks';
 
 function Demo() {
   // ctrl + J and ⌘ + J to toggle color scheme
@@ -53,7 +53,7 @@ which should be used with `onKeyDown`:
 With `getHotkeyHandler` you can also add events to any dom node using `.addEventListener`:
 
 ```tsx
-import { getHotkeyHandler } from '@mantine/hooks';
+import { getHotkeyHandler } from '@k-link/hooks';
 
 document.body.addEventListener(
   'keydown',

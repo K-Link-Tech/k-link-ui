@@ -1,24 +1,24 @@
 ---
-group: 'mantine-core'
-package: '@mantine/core'
+group: 'k-link-core'
+package: '@k-link/core'
 title: Notification
 order: 1
 slug: /core/notification/
 category: 'feedback'
 description: 'Show dynamic notifications and alerts to user, part of notifications system'
 props: ['Notification']
-import: "import { Notification } from '@mantine/core';"
-source: 'mantine-core/src/Notification/Notification.tsx'
+import: "import { Notification } from '@k-link/core';"
+source: 'k-link-core/src/Notification/Notification.tsx'
 docs: 'core/Notification.mdx'
 styles: ['Notification']
 ---
 
-import { NotificationDemos } from '@mantine/demos';
+import { NotificationDemos } from '@k-link/demos';
 
 ## Usage
 
 Notification is a base component for notification system.
-Build your own or use [@mantine/notifications](/others/notifications/) package.
+Build your own or use [@k-link/notifications](/others/notifications/) package.
 
 Notification component has 3 variants:
 
@@ -37,7 +37,7 @@ Notification component has 3 variants:
 To customize CloseButton inside Notification, you can pass `CloseButtonProps`.
 
 ```tsx
-<Notification closeButtonProps={{ color: 'red' }} />
+<Notification closeButtonProps={{ color: 'error' }} />
 <Notification closeButtonProps={{ iconSize: 20 }} />
 ```
 

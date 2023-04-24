@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Alert } from '@mantine/core';
+import { Alert } from '@k-link/core';
 import { MdxPageBase } from '../MdxPageBase/MdxPageBase';
 import MdxTitle from '../MdxProvider/MdxTitle/MdxTitle';
 import { MdxPageProps } from '../../../types';
@@ -13,7 +13,7 @@ export function MdxErrorPage({ body, frontmatter }: MdxPageProps) {
       <div className={classes.wrapper}>
         <div className={classes.container}>
           <MdxTitle order={1}>{frontmatter.title}</MdxTitle>
-          <Alert className={classes.error} color="red" title="Error message">
+          <Alert className={classes.error} color="error" title="Error message">
             {frontmatter.error}
           </Alert>
           <MDXRenderer>{body}</MDXRenderer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollArea, rem } from '@mantine/core';
+import { ScrollArea, rem } from '@k-link/core';
 import NavbarMainLink from './NavbarMainLink/NavbarMainLink';
 import NavbarDocsCategory from './NavbarDocsCategory/NavbarDocsCategory';
 import { getDocsData } from '../get-docs-data';

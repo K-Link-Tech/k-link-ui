@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, Title } from '@mantine/core';
-import * as STYLES_API from '@mantine/styles-api';
+import { Table, Title } from '@k-link/core';
+// import { Table, Title } from '@k-link/k-link-core';
+import * as STYLES_API from '@k-link/styles-api';
 import useStyles from './StylesApiItem.styles';
 
 interface StylesApiItemProps {
@@ -19,7 +20,7 @@ export function StylesApiItem({ component }: StylesApiItemProps) {
   const rows = CLASS_NAMES.map((name) => (
     <tr key={name}>
       <td>{name}</td>
-      <td>{`.mantine-${component}-${name}`}</td>
+      <td>{`.k-link-${component}-${name}`}</td>
       <td>{COMPONENT_STYLES[name]}</td>
     </tr>
   ));

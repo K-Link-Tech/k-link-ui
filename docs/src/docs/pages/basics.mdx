@@ -2,24 +2,24 @@
 title: Learn the basics
 ---
 
-import { SliderDemos, CreateStylesDemos } from '@mantine/demos';
+import { SliderDemos, CreateStylesDemos } from '@k-link/demos';
 
 # Learn the basics
 
-This guide will help you get familiar with core Mantine concepts.
-Please read this guide, [theming](/theming/mantine-provider/) and [styles](/styles/sx/) sections before starting development
+This guide will help you get familiar with core Klink UI concepts.
+Please read this guide, [theming](/theming/k-link-provider/) and [styles](/styles/sx/) sections before starting development
 to learn about all available theming and styling features.
 
 ## Getting help
 
-Mantine has a very friendly community, we are always happy to help you get started:
+Klink UI has a very friendly community, we are always happy to help you get started:
 
 - [Join the Discord community](https://discord.gg/wbH82zuWMN) – it is the easiest way to get help, all questions are usually answered in about 30 minutes.
-- [GitHub Discussions](https://github.com/mantinedev/mantine/discussions) – ask anything about the project or give feedback.
+- [GitHub Discussions](https://github.com/mantinedev/k-link/discussions) – ask anything about the project or give feedback.
 
 ## Using documentation
 
-Mantine documentation includes more than 150 pages, to use it efficiently remember 2 keyboard shortcuts:
+Klink UI documentation includes more than 150 pages, to use it efficiently remember 2 keyboard shortcuts:
 
 - `⌘ + K` or `Ctrl + K` – focus search field, searching components and hooks is the best way to jump straight to the page you are looking for.
 - `⌘ + J` or `Ctrl + J` – toggle color scheme (light/dark). All components support both light and dark color schemes, using this shortcut is the easiest way to preview both color schemes.
@@ -28,10 +28,10 @@ Mantine documentation includes more than 150 pages, to use it efficiently rememb
 ## Theming
 
 [Theme object](/theming/theme-object/) supports changing colors, spacing, box-shadows, font families, font sizes and many other properties.
-To configure theme, wrap your app with a [MantineProvider](/theming/mantine-provider/) component:
+To configure theme, wrap your app with a [MantineProvider](/theming/k-link-provider/) component:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -50,11 +50,11 @@ function Demo() {
 
 ## Dark color scheme
 
-All Mantine components support light and dark color scheme out of the box.
+All Klink UI components support light and dark color scheme out of the box.
 To learn how to implement color scheme changes via context follow [dark theme guide](/guides/dark-theme/).
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -69,7 +69,7 @@ function Demo() {
 
 ### createStyles
 
-Mantine is built with a css-in-js library based on [emotion](https://emotion.sh/).
+Klink UI is built with a css-in-js library based on [emotion](https://emotion.sh/).
 You can use any other styling solution but we recommend working with [createStyles](/styles/create-styles/)
 to avoid styles collisions.
 
@@ -87,18 +87,18 @@ Core `createStyles` features overview:
 
 ### Color prop
 
-Mantine components work with colors defined in [theme.colors](/theming/colors/).
+Klink UI components work with colors defined in [theme.colors](/theming/colors/).
 `theme.colors` is an object that contains an array of 10 shades per each color. To use predefined colors in components set `color` prop:
 
 ```tsx
-<Badge color="teal" />
-<Button color="violet" />
+<Badge color="success" />
+<Button color="purple" />
 ```
 
 You can [extend theme](/theming/colors/) with any amount of your colors:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -123,7 +123,7 @@ Note that component appearance usually depends on `variant` prop and current `th
 
 ### Sizes
 
-Most Mantine components support `size` prop with xs, sm, md, lg and xl values:
+Most Klink UI components support `size` prop with xs, sm, md, lg and xl values:
 
 ```tsx
 <Button size="xl" />
@@ -155,7 +155,7 @@ Components that have padding get values from `theme.spacing`, default values are
 To change these values set `spacing` property on [theme](/theming/theme-object/):
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -168,7 +168,7 @@ function Demo() {
 }
 ```
 
-Later when you use Mantine components you can reference these values in `spacing` or other similar props or set the spacing in px:
+Later when you use Klink UI components you can reference these values in `spacing` or other similar props or set the spacing in px:
 
 ```tsx
 <Group spacing="md" /> // -> md spacing from theme.spacing
@@ -192,7 +192,7 @@ Components that use the box-shadow property get values from `theme.shadows`, def
 To change these values set the `shadows` property on [theme](/theming/theme-object/):
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -213,7 +213,7 @@ function Demo() {
 }
 ```
 
-Later when you use Mantine components you can reference these values in `shadow` prop or define your own shadow:
+Later when you use Klink UI components you can reference these values in `shadow` prop or define your own shadow:
 
 ```tsx
 <Paper shadow="xl" /> // -> xl shadow from theme.shadows
@@ -226,7 +226,7 @@ You can get ref of most components with their `ref` prop:
 
 ```tsx
 import { useRef } from 'react';
-import { Button, Paper, TextInput } from '@mantine/core';
+import { Button, Paper, TextInput } from '@k-link/core';
 
 function Demo() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -256,7 +256,7 @@ To setup server side rendering follow one of these guides
 
 ### Exported types
 
-`@mantine/core` package export types to help you build components and styles with TypeScript:
+`@k-link/core` package export types to help you build components and styles with TypeScript:
 
 - `MantineTheme` – theme interface defined in MantineProvider.
 - `ColorScheme` – union of `'light' | 'dark'`.
@@ -271,5 +271,5 @@ To setup server side rendering follow one of these guides
 You can import props type of any component by adding `Props` to the component name:
 
 ```tsx
-import type { ButtonProps } from '@mantine/core';
+import type { ButtonProps } from '@k-link/core';
 ```

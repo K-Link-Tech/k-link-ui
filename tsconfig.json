@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.base.json",
   "include": [
-    "src/mantine-*/src",
-    "src/mantine-*/demos",
+    "src/k-link-*/src",
+    "src/k-link-*/demos",
     "./types",
     "./docs/src",
     "./scripts",
@@ -16,14 +16,14 @@
     "configuration/jest",
     "configuration/storybook/main.js",
     "node_modules",
-    "src/mantine-*/esm/**/*",
-    "src/mantine-*/lib/**/*",
-    "src/mantine-*/cjs/**/*"
+    "src/k-link-*/esm/**/*",
+    "src/k-link-*/lib/**/*",
+    "src/k-link-*/cjs/**/*"
   ],
   "compilerOptions": {
     "paths": {
-      "@mantine/*": ["src/mantine-*/src"],
-      "@demos/*": ["src/mantine-*/src/demos"]
+      "@k-link/*": ["src/k-link-*/src"],
+      "@demos/*": ["src/k-link-*/src/demos"]
     }
   }
 }

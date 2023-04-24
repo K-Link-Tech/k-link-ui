@@ -1,32 +1,32 @@
 ---
-group: 'mantine-form'
-package: '@mantine/form'
+group: 'k-link-form'
+package: '@k-link/form'
 title: 'use-form'
 order: 0
 slug: /form/use-form/
 description: 'Manage form state'
-import: "import { useForm } from '@mantine/form';"
+import: "import { useForm } from '@k-link/form';"
 docs: 'form/use-form.mdx'
-source: 'mantine-form/src'
+source: 'k-link-form/src'
 license: MIT
 ---
 
-import { FormDemos } from '@mantine/demos';
+import { FormDemos } from '@k-link/demos';
 
 ## Installation
 
-`@mantine/form` package does not depend on any other libraries, you can use it with or without `@mantine/core` inputs:
+`@k-link/form` package does not depend on any other libraries, you can use it with or without `@k-link/core` inputs:
 
 Install with npm:
 
 ```bash
-npm install @mantine/form
+npm install @k-link/form
 ```
 
 Install with yarn:
 
 ```bash
-yarn add @mantine/form
+yarn add @k-link/form
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ yarn add @mantine/form
 All examples below use the following example use-form hook.
 
 ```tsx
-import { useForm } from '@mantine/form';
+import { useForm } from '@k-link/form';
 
 const form = useForm({
   initialValues: {
@@ -100,7 +100,7 @@ form.insertListItem('fruits', { name: 'Orange', available: true }, 1);
 form.removeListItem('fruits', 1);
 
 // Swaps two items of the list at the specified path.
-// You should make sure that there are elements at at the `from` and `to` index.
+// If no element exists at the `from` or `to` index, the list doesn't change.
 form.reorderListItem('fruits', { from: 1, to: 0 });
 ```
 
@@ -109,7 +109,7 @@ form.reorderListItem('fruits', { from: 1, to: 0 });
 [Form validation guide](/form/validation/)
 
 ```tsx
-import { useForm } from '@mantine/form';
+import { useForm } from '@k-link/form';
 
 const form = useForm({
   initialValues: {
@@ -230,8 +230,8 @@ As second parameter options can be passed.
 `UseFormReturnType` can be used when you want to pass `form` as a prop to another component:
 
 ```tsx
-import { TextInput } from '@mantine/core';
-import { useForm, UseFormReturnType } from '@mantine/form';
+import { TextInput } from '@k-link/core';
+import { useForm, UseFormReturnType } from '@k-link/form';
 
 interface FormValues {
   name: string;

@@ -1,6 +1,6 @@
 ---
-group: 'mantine-core'
-package: '@mantine/core'
+group: 'k-link-core'
+package: '@k-link/core'
 title: BackgroundImage
 order: 1
 polymorphic: true
@@ -8,12 +8,12 @@ slug: /core/background-image/
 category: 'data-display'
 description: 'Displays image as background'
 props: ['BackgroundImage']
-import: "import { BackgroundImage } from '@mantine/core';"
-source: 'mantine-core/src/BackgroundImage/BackgroundImage.tsx'
+import: "import { BackgroundImage } from '@k-link/core';"
+source: 'k-link-core/src/BackgroundImage/BackgroundImage.tsx'
 docs: 'core/BackgroundImage.mdx'
 ---
 
-import { BackgroundImageDemos } from '@mantine/demos';
+import { BackgroundImageDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -28,15 +28,15 @@ It can be used for cards, hero headers and similar components:
 `BackgroundImage` is a [polymorphic component](/guides/polymorphic/), you can change root element by setting `component` prop:
 
 ```tsx
-import { BackgroundImage } from '@mantine/core';
+import { BackgroundImage } from '@k-link/core';
 
 function Demo() {
   return (
     <BackgroundImage
       component="a"
-      href="https://mantine.dev"
+      href="https://k-link.dev"
       target="_blank"
-      src="https://mantine.dev/image.png"
+      src="https://k-link.dev/image.png"
     />
   );
 }

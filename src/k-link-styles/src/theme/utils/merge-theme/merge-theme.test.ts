@@ -1,0 +1,79 @@
+import { DEFAULT_THEME } from '../../default-theme';
+import { mergeTheme } from './merge-theme';
+
+const getThemeBase = () => {
+  const themeBase = { ...DEFAULT_THEME };
+  delete themeBase.fn;
+  return themeBase;
+};
+
+describe('@k-link/styles/merge-theme', () => {
+  it('shallow merges non-object properties', () => {
+    const themeBase = getThemeBase();
+    expect(mergeTheme(themeBase, { primaryColor: 'error', white: '#ccc' })).toStrictEqual({
+      ...themeBase,
+      primaryColor: 'error',
+      white: '#ccc',
+    });
+  });
+
+  it('shallow merges theme object properties', () => {
+    const themeBase = getThemeBase();
+    expect(
+      mergeTheme(themeBase, {
+        colors: { stone: ['#ccc', '#ddd', '#eee'], red: ['error'] },
+        spacing: { xl: '900rem' },
+      })
+    ).toStrictEqual({
+      ...themeBase,
+      colors: { ...themeBase.colors, stone: ['#ccc', '#ddd', '#eee'], red: ['error'] },
+      spacing: {
+        ...themeBase.spacing,
+        xl: '900rem',
+      },
+    });
+  });
+
+  it('merges headings correctly', () => {
+    const themeBase = getThemeBase();
+    expect(
+      mergeTheme(themeBase, {
+        headings: { fontFamily: 'sans-serif', sizes: { h3: { fontSize: '500rem' } } },
+      })
+    ).toStrictEqual({
+      ...themeBase,
+      headings: {
+        ...themeBase.headings,
+        fontFamily: 'sans-serif',
+        sizes: {
+          ...themeBase.headings.sizes,
+          h3: {
+            ...themeBase.headings.sizes.h3,
+            fontSize: '500rem',
+          },
+        },
+      },
+    });
+  });
+
+  it('merges other property correctly', () => {
+    const themeBase = getThemeBase();
+    expect(mergeTheme(themeBase, { other: { prop: 1, test: { nested: true } } })).toStrictEqual({
+      ...themeBase,
+      other: { prop: 1, test: { nested: true } },
+    });
+  });
+
+  it('sets headings font-family based on theme.fontFamily if theme.headings.fontFamily is not defined', () => {
+    const withoutHeading = mergeTheme(getThemeBase(), { fontFamily: 'test' });
+    expect(withoutHeading.fontFamily).toBe('test');
+    expect(withoutHeading.headings.fontFamily).toBe('test');
+
+    const withHeading = mergeTheme(getThemeBase(), {
+      fontFamily: 'test',
+      headings: { fontFamily: 'test-heading' },
+    });
+    expect(withHeading.fontFamily).toBe('test');
+    expect(withHeading.headings.fontFamily).toBe('test-heading');
+  });
+});

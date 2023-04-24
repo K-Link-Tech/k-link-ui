@@ -1,4 +1,4 @@
-import { createStyles, rem, em } from '@mantine/core';
+import { createStyles, rem, em } from '@k-link/core';
 
 export default createStyles((theme, { white }: { white: boolean }) => ({
   wrapper: {

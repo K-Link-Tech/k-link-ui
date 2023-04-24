@@ -1,12 +1,12 @@
 ---
 group: 'theming'
 title: MantineProvider
-slug: /theming/mantine-provider/
+slug: /theming/k-link-provider/
 order: 1
 search: 'Theme context, CSS reset, CSS variables, context classes and styles'
 ---
 
-import { ThemeDemos } from '@mantine/demos';
+import { ThemeDemos } from '@k-link/demos';
 
 # MantineProvider
 
@@ -15,7 +15,7 @@ MantineProvider component can be used to change theme. It is not required if you
 ## Usage
 
 ```tsx
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@k-link/core';
 
 function App() {
   return <Button>My app button</Button>;
@@ -44,7 +44,7 @@ and global styles (`withGlobalStyles`). It is recommended to enable these option
 - font-size to `theme.fontSizes.md`
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -57,11 +57,11 @@ function Demo() {
 
 ## CSS variables
 
-If you prefer to style components with CSS/SCSS or other styling solutions that do not have access to Mantine theme
-context, then you can use Mantine CSS variables. To add CSS variables to the `:root` set `withCSSVariables` prop on `MantineProvider`:
+If you prefer to style components with CSS/SCSS or other styling solutions that do not have access to Klink UI theme
+context, then you can use Klink UI CSS variables. To add CSS variables to the `:root` set `withCSSVariables` prop on `MantineProvider`:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -76,29 +76,29 @@ Then you will be able to use variables anywhere in your CSS:
 
 ```css
 .my-button {
-  background-color: var(--mantine-color-blue-6);
-  font-family: var(--mantine-font-family);
-  line-height: var(--mantine-line-height);
+  background-color: var(--k-link-color-blue-6);
+  font-family: var(--k-link-font-family);
+  line-height: var(--k-link-line-height);
 }
 ```
 
-Mantine exposes the following CSS variables based on [theme](/theming/theme-object/) you provide:
+Klink UI exposes the following CSS variables based on [theme](/theming/theme-object/) you provide:
 
-- `--mantine-color-white`
-- `--mantine-color-black`
-- `--mantine-transition-timing-function`
-- `--mantine-line-height`
-- `--mantine-font-family`
-- `--mantine-font-family-monospace`
-- `--mantine-font-family-headings`
-- `--mantine-heading-font-weight`
-- `--mantine-shadow-{size}`, e.g. `--mantine-shadow-sm`, `--mantine-shadow-xl`
-- `--mantine-radius-{size}`, e.g. `--mantine-radius-sm`, `--mantine-radius-xl`
-- `--mantine-spacing-{size}`, e.g. `--mantine-spacing-sm`, `--mantine-spacing-xl`
-- `--mantine-font-size-{size}`, e.g. `--mantine-font-size-sm`, `--mantine-font-size-xl`
-- `--mantine-color-{color}-{shade}`, e.g. `--mantine-color-blue-6`, `--mantine-color-gray-0`
-- `--mantine-{heading}-font-size`, e.g. `--mantine-h1-font-size`
-- `--mantine-{heading}-line-height`, e.g, `--mantine-h3-line-height`
+- `--k-link-color-white`
+- `--k-link-color-black`
+- `--k-link-transition-timing-function`
+- `--k-link-line-height`
+- `--k-link-font-family`
+- `--k-link-font-family-monospace`
+- `--k-link-font-family-headings`
+- `--k-link-heading-font-weight`
+- `--k-link-shadow-{size}`, e.g. `--k-link-shadow-sm`, `--k-link-shadow-xl`
+- `--k-link-radius-{size}`, e.g. `--k-link-radius-sm`, `--k-link-radius-xl`
+- `--k-link-spacing-{size}`, e.g. `--k-link-spacing-sm`, `--k-link-spacing-xl`
+- `--k-link-font-size-{size}`, e.g. `--k-link-font-size-sm`, `--k-link-font-size-xl`
+- `--k-link-color-{color}-{shade}`, e.g. `--k-link-color-blue-6`, `--k-link-color-gray-0`
+- `--k-link-{heading}-font-size`, e.g. `--k-link-h1-font-size`
+- `--k-link-{heading}-line-height`, e.g, `--k-link-h3-line-height`
 
 ## Nested MantineProviders
 
@@ -109,7 +109,7 @@ If some parts of your application require different theme settings, you can wrap
 Note that nested `MantineProvider` will inherit `theme` override from parent provider only if `inherit` prop is set:
 
 ```tsx
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@k-link/core';
 
 function App() {
   return (
@@ -120,9 +120,9 @@ function App() {
         Child MantineProvider, inherits theme from parent MantineProvider.
         Other properties specified on child provider will override parent props.
         For example, in this case theme override will be:
-        { colorScheme: 'dark', primaryColor: 'red' }
+        { colorScheme: 'dark', primaryColor: 'error' }
       */}
-      <MantineProvider theme={{ primaryColor: 'red' }} inherit>
+      <MantineProvider theme={{ primaryColor: 'error' }} inherit>
         <Button>Affected only by child provider</Button>
       </MantineProvider>
     </MantineProvider>
@@ -142,7 +142,7 @@ All components that are rendered inside MantineProvider will inherit those style
 If component does not specify Styles API selectors, then in most cases you can add styles using `root` selector:
 
 ```tsx
-import { MantineProvider, Text } from '@mantine/core';
+import { MantineProvider, Text } from '@k-link/core';
 
 function App() {
   return (
@@ -171,7 +171,7 @@ Same as with `styles` you can add classes to all components with `classNames`.
 This approach is useful when you want to styles components with utility based CSS libraries.
 
 ```tsx
-import { MantineProvider, Button } from '@mantine/core';
+import { MantineProvider, Button } from '@k-link/core';
 
 function App() {
   return (
@@ -194,7 +194,7 @@ function App() {
 
 ## Variants on MantineProvider
 
-To create new variants set `variants` property for any Mantine component.
+To create new variants set `variants` property for any Klink UI component.
 `variants` property must be an object of functions:
 
 - object key is variant name
@@ -207,7 +207,7 @@ For example you can create new variants for [Button](/core/button/):
 
 ## Sizes on MantineProvider
 
-To create new sizes set `sizes` property for Mantine components that support `size` prop.
+To create new sizes set `sizes` property for Klink UI components that support `size` prop.
 `sizes` property must be an object of functions:
 
 - object key is size name

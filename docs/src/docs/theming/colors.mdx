@@ -6,19 +6,19 @@ slug: /theming/colors/
 search: 'Default colors, primary colors, add additional colors'
 ---
 
-import { ThemeDemos } from '@mantine/demos';
+import { ThemeDemos } from '@k-link/demos';
 import { ThemeColors } from '../../components/ThemeColors/ThemeColors';
 
 # Colors
 
-Mantine uses [open-color](https://yeun.github.io/open-color/) in default theme with some additions.
+Klink UI uses [open-color](https://yeun.github.io/open-color/) in default theme with some additions.
 Each color has 10 shades.
 
 Colors are exposed on theme object as an array of strings,
 you can access color shade by color name and index (0-9), colors with larger index are darker:
 
 ```tsx
-theme.colors.red[5];
+theme.colors.error[5];
 theme.colors.gray[9];
 theme.colors.blue[0];
 ```
@@ -56,7 +56,7 @@ For example, [Button](/core/button/) Component by default will use `theme.primar
 it should only reference value from `theme.colors`:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function DemoWithError() {
   return (
@@ -84,7 +84,7 @@ Note that for some variants with dark color scheme `primaryShade` will not be us
 `primaryShade` can also be customized for dark and light color scheme separately:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 
 function Demo() {
   return (
@@ -101,11 +101,11 @@ function Demo() {
 
 ## Colors index reference
 
-When you use `color` prop in any Mantine component, it will reference `theme.primaryShade` to get
+When you use `color` prop in any Klink UI component, it will reference `theme.primaryShade` to get
 value from `theme.colors`:
 
 ```tsx
-import { Button } from '@mantine/core';
+import { Button } from '@k-link/core';
 
 // the following button will have theme.colors.orange[theme.primaryShade] background
 function Demo() {
@@ -124,14 +124,14 @@ separated with `.`, for example `pink.3`:
 
 ## Add custom colors types
 
-TypeScript will only autocomplete Mantine's default colors when accessing the theme. To add your custom colors to the MantineColor type, you can use TypeScript module declaration.
+TypeScript will only autocomplete Klink UI's default colors when accessing the theme. To add your custom colors to the MantineColor type, you can use TypeScript module declaration.
 
 ```ts
-import { Tuple, DefaultMantineColor } from '@mantine/core';
+import { Tuple, DefaultMantineColor } from '@k-link/core';
 
 type ExtendedCustomColors = 'primaryColorName' | 'secondaryColorName' | DefaultMantineColor;
 
-declare module '@mantine/core' {
+declare module '@k-link/core' {
   export interface MantineThemeColorsOverride {
     colors: Record<ExtendedCustomColors, Tuple<string, 10>>;
   }

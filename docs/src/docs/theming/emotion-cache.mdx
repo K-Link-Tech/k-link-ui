@@ -8,13 +8,13 @@ search: 'Configure emotion and stylis, styles insertion point, RTL support'
 
 # Emotion cache
 
-All Mantine components are styled with [emotion](https://emotion.sh/).
+All Klink UI components are styled with [emotion](https://emotion.sh/).
 In some cases you will need to create custom emotion cache, for example to
 handle RTL direction.
 
 ## Configure emotion
 
-By default, Mantine create [emotion cache](https://emotion.sh/docs/@emotion/cache) for you automatically.
+By default, Klink UI create [emotion cache](https://emotion.sh/docs/@emotion/cache) for you automatically.
 If you need to change cache options, then use `createEmotionCache` function to create new cache, it accepts
 a configuration object with the following properties:
 
@@ -24,7 +24,7 @@ a configuration object with the following properties:
 - `stylisPlugins` – an array of Stylis plugins that will be run by Stylis during preprocessing, for example [stylis-plugin-rtl](https://www.npmjs.com/package/stylis-plugin-rtl) can be used to add [RTL](/guides/rtl) support
 
 ```tsx
-import { MantineProvider, createEmotionCache } from '@mantine/core';
+import { MantineProvider, createEmotionCache } from '@k-link/core';
 
 const myCache = createEmotionCache({ key: 'mantine' });
 
@@ -39,12 +39,12 @@ function Demo() {
 
 ## Change styles insertion point
 
-By default, Mantine components styles are prepended to head to allow overrides.
-To make Mantine styles override other styles, create emotion cache with `prepend: false`.
+By default, Klink UI components styles are prepended to head to allow overrides.
+To make Klink UI styles override other styles, create emotion cache with `prepend: false`.
 With this option styles will be added at the end of `head` element:
 
 ```tsx
-import { MantineProvider, createEmotionCache } from '@mantine/core';
+import { MantineProvider, createEmotionCache } from '@k-link/core';
 
 const appendCache = createEmotionCache({ key: 'mantine', prepend: false });
 
@@ -62,7 +62,7 @@ function Demo() {
 To change classes prefix create cache with key:
 
 ```tsx
-import { MantineProvider, createEmotionCache } from '@mantine/core';
+import { MantineProvider, createEmotionCache } from '@k-link/core';
 
 const myCache = createEmotionCache({ key: 'my-prefix' });
 
@@ -80,18 +80,18 @@ Now classes will follow this pattern: `my-prefix-{random part}`.
 ## Server side rendering with custom cache
 
 To setup server side rendering with custom cache, you will need to provide
-the same emotion cache both to [MantineProvider](/theming/mantine-provider/)
+the same emotion cache both to [MantineProvider](/theming/k-link-provider/)
 and to the server side code.
 
-Example with Next.js ([view full code on GitHub](https://github.com/mantinedev/mantine-next-template/tree/v5-rtl)):
+Example with Next.js ([view full code on GitHub](https://github.com/mantinedev/k-link-next-template/tree/v5-rtl)):
 
 ```tsx
 // rtl-cache.ts
 import rtlPlugin from 'stylis-plugin-rtl';
-import { createEmotionCache } from '@mantine/core';
+import { createEmotionCache } from '@k-link/core';
 
 export const rtlCache = createEmotionCache({
-  key: 'mantine-rtl',
+  key: 'k-link-rtl',
   stylisPlugins: [rtlPlugin],
 });
 ```
@@ -99,7 +99,7 @@ export const rtlCache = createEmotionCache({
 ```tsx
 // _app.tsx
 import { AppProps } from 'next/app';
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@k-link/core';
 import { rtlCache } from '../rtl-cache';
 
 export default function App(props: AppProps) {
@@ -122,7 +122,7 @@ export default function App(props: AppProps) {
 ```tsx
 // _document.tsx
 import Document, { DocumentContext } from 'next/document';
-import { ServerStyles, createStylesServer } from '@mantine/next';
+import { ServerStyles, createStylesServer } from '@k-link/next';
 import { rtlCache } from '../rtl-cache';
 
 const stylesServer = createStylesServer(rtlCache);

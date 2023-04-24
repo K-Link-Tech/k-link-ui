@@ -1,0 +1,41 @@
+{
+  "name": "@k-link/dates",
+  "description": "Calendars, date and time pickers based on Klink UI components",
+  "version": "1.3.2",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "sideEffects": false,
+  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "homepage": "https://k-link.dev/dates/getting-started/",
+  "repository": {
+    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "type": "git",
+    "directory": "src/k-link-dates"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "nextjs",
+    "ui",
+    "components",
+    "ui-kit",
+    "library",
+    "frontend",
+    "calendar",
+    "date",
+    "time",
+    "picker"
+  ],
+  "peerDependencies": {
+    "@k-link/core": "1.3.2",
+    "@k-link/hooks": "1.3.2",
+    "dayjs": ">=1.0.0",
+    "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "@k-link/utils": "1.3.2"
+  },
+  "devDependencies": {}
+}

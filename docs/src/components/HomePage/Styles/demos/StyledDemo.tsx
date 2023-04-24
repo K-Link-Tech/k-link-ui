@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Text, Box, Anchor, rem } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { Text, Box, Anchor, rem } from '@k-link/core';
+import { Prism } from '@k-link/prism';
 
 const code = `
 import styled from '@emotion/styled';
@@ -29,7 +29,7 @@ export function StyledDemo() {
   return (
     <Box pt="xl">
       <Text mb="sm">
-        Use styled components syntax with Mantine theme and{' '}
+        Use styled components syntax with Klink UI theme and{' '}
         <Anchor component={Link} to="/styles/styled/">
           @emotion/styled:
         </Anchor>

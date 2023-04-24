@@ -1,6 +1,6 @@
 ---
-group: 'mantine-core'
-package: '@mantine/core'
+group: 'k-link-core'
+package: '@k-link/core'
 title: Pagination
 order: 1
 slug: /core/pagination/
@@ -8,13 +8,13 @@ category: 'navigation'
 description: 'Display active page and navigate between multiple pages'
 componentPrefix: 'Pagination'
 props: ['Pagination', 'PaginationRoot', 'PaginationItems']
-import: "import { Pagination } from '@mantine/core';"
-source: 'mantine-core/src/Pagination/Pagination.tsx'
+import: "import { Pagination } from '@k-link/core';"
+source: 'k-link-core/src/Pagination/Pagination.tsx'
 docs: 'core/Pagination.mdx'
 styles: ['Pagination']
 ---
 
-import { PaginationDemos } from '@mantine/demos';
+import { PaginationDemos } from '@k-link/demos';
 
 ## Usage
 
@@ -22,15 +22,15 @@ import { PaginationDemos } from '@mantine/demos';
 
 ## Controlled
 
-To control component state provide `value` and `onChange` props:
+To control component state provide `page` and `onChange` props:
 
 ```tsx
 import { useState } from 'react';
-import { Pagination } from '@mantine/core';
+import { Pagination } from '@k-link/core';
 
 function Demo() {
   const [activePage, setPage] = useState(1);
-  return <Pagination value={activePage} onChange={setPage} total={10} />;
+  return <Pagination page={activePage} onChange={setPage} total={10} />;
 }
 ```
 
@@ -52,9 +52,9 @@ You can use `data-active` attribute on `control` selector to change styles of se
 
 <Demo data={PaginationDemos.stylesApi} />
 
-## Compound components
+## Modular components
 
-You can use the following compound components to have full control over the `Modal` rendering:
+You can use the following modular components to have full control over the `Modal` rendering:
 
 - `Pagination.Root` – context provider
 - `Pagination.Items` – items list
@@ -75,5 +75,5 @@ You can use the following compound components to have full control over the `Mod
 
 ## use-pagination hook
 
-If you need more flexibility @mantine/hooks exports [use-pagination](/hooks/use-pagination/) hook,
+If you need more flexibility @k-link/hooks exports [use-pagination](/hooks/use-pagination/) hook,
 you can use it to create your own pagination component.

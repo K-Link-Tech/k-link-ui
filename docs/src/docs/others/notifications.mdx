@@ -1,34 +1,34 @@
 ---
 order: 1
 group: 'Other packages'
-package: '@mantine/notifications'
+package: '@k-link/notifications'
 title: Notifications system
 slug: /others/notifications/
 props: ['Notifications']
-source: 'mantine-notifications/src'
+source: 'k-link-notifications/src'
 docs: 'others/notifications.mdx'
-pageTitle: 'Mantine Notifications'
-description: 'Mantine notifications system'
-installation: '@mantine/notifications'
+pageTitle: 'Klink UI Notifications'
+description: 'Klink UI notifications system'
+installation: '@k-link/notifications'
 license: MIT
 ---
 
-import { NotificationDemos, NotificationsDemos } from '@mantine/demos';
+import { NotificationDemos, NotificationsDemos } from '@k-link/demos';
 
 ## Installation
 
-Package depends on `@mantine/core` and `@mantine/hooks`.
+Package depends on `@k-link/core` and `@k-link/hooks`.
 
 Install with yarn:
 
 ```bash
-yarn add @mantine/notifications
+yarn add @k-link/notifications
 ```
 
 Install with npm:
 
 ```bash
-npm install @mantine/notifications
+npm install @k-link/notifications
 ```
 
 ## Demo
@@ -38,11 +38,11 @@ npm install @mantine/notifications
 ## Usage
 
 Add `Notifications` component anywhere in your application, usually it is placed
-inside [MantineProvider](/theming/mantine-provider/) next to your `App` component:
+inside [MantineProvider](/theming/k-link-provider/) next to your `App` component:
 
 ```tsx
-import { MantineProvider } from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
+import { MantineProvider } from '@k-link/core';
+import { Notifications } from '@k-link/notifications';
 
 function Demo() {
   return (
@@ -61,7 +61,7 @@ Then use `notifications.show` function anywhere in your application:
 ## Functions
 
 Notifications system is based on [custom events](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events),
-`@mantine/notifications` package exports the following functions:
+`@k-link/notifications` package exports the following functions:
 
 - **notifications.show** – adds given notification to notifications list or queue depending on current state and limit
 - **notifications.update** – updates notification that was previously added to the state or queue
@@ -69,10 +69,10 @@ Notifications system is based on [custom events](https://developer.mozilla.org/e
 - **notifications.clean** – removes all notifications from notifications state and queue
 - **notifications.cleanQueue** – removes all notifications from queue
 
-All functions can be imported from `@mantine/notifications` package and can be used in any part of your application:
+All functions can be imported from `@k-link/notifications` package and can be used in any part of your application:
 
 ```tsx
-import { notifications } from '@mantine/notifications';
+import { notifications } from '@k-link/notifications';
 ```
 
 ## Notification props
@@ -80,7 +80,6 @@ import { notifications } from '@mantine/notifications';
 Notification state item can have these properties:
 
 - **id** – notification id, it is used to update and remove notification, by default id is randomly generated
-- **withBorder** – determines whether notification should have border
 - **withCloseButton** – determines whether close button should be visible
 - **onClose** – calls when notification is unmounted
 - **onOpen** – calls when notification is mounted
@@ -92,7 +91,7 @@ All properties except **message** are optional.
 
 ```tsx
 import { IconX } from '@tabler/icons-react';
-import { notifications } from '@mantine/notifications';
+import { notifications } from '@k-link/notifications';
 
 // Bare minimum – message is required for all notifications
 notifications.show({ message: 'Hello' });
@@ -106,11 +105,11 @@ notifications.show({
   autoClose: 5000,
   title: "You've been compromised",
   message: 'Leave the building immediately',
-  color: 'red',
+  color: 'error',
   icon: <IconX />,
   className: 'my-notification-class',
-  style: { backgroundColor: 'red' },
-  sx: { backgroundColor: 'red' },
+  style: { backgroundColor: 'error' },
+  sx: { backgroundColor: 'error' },
   loading: false,
 });
 ```
@@ -138,7 +137,7 @@ Position cannot be changed per notification. `Notifications` supports the follow
 - `bottom-center`
 
 ```tsx
-import { Notifications } from '@mantine/notifications';
+import { Notifications } from '@k-link/notifications';
 
 function Demo() {
   return <Notifications position="top-right" zIndex={2077} />;
@@ -152,7 +151,7 @@ You can limit maximum amount of notifications that can be displayed by setting
 `limit` prop on `Notifications`:
 
 ```tsx
-import { Notifications } from '@mantine/notifications';
+import { Notifications } from '@k-link/notifications';
 
 function Demo() {
   return <Notifications limit={5} />;
@@ -169,7 +168,7 @@ and displayed when notification from current state is closed.
 To remove specific notification from state or queue use `notifications.hide` function:
 
 ```tsx
-import { notifications } from '@mantine/notifications';
+import { notifications } from '@k-link/notifications';
 
 notifications.show({ id: 'hello', message: 'Hello!' });
 notifications.hide('hello');
@@ -189,7 +188,7 @@ Use `notifications.cleanQueue` function to remove all notifications that are not
 You can configure auto close timeout with `Notifications`:
 
 ```tsx
-import { Notifications } from '@mantine/notifications';
+import { Notifications } from '@k-link/notifications';
 
 // All notifications will be closed automatically in 4000ms
 function Demo() {
@@ -200,7 +199,7 @@ function Demo() {
 Or in `notifications.show`/`notifications.update` functions:
 
 ```tsx
-import { notifications } from '@mantine/notifications';
+import { notifications } from '@k-link/notifications';
 
 notifications.show({
   message: 'I will close in 500ms seconds',

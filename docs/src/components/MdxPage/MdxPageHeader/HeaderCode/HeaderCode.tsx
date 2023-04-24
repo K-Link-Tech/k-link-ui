@@ -1,7 +1,7 @@
 import React from 'react';
-import { em, Tooltip } from '@mantine/core';
-import { useClipboard, useMediaQuery } from '@mantine/hooks';
-import { Prism } from '@mantine/prism';
+import { em, Tooltip } from '@k-link/core';
+import { useClipboard, useMediaQuery } from '@k-link/hooks';
+import { Prism } from '@k-link/prism';
 import { Language } from 'prism-react-renderer';
 import useStyles from './HeaderCode.styles';
 
@@ -26,7 +26,7 @@ export function HeaderCode({ code, icon, language }: ImportStatementProps) {
         withArrow
         arrowSize={6}
         offset={10}
-        color={clipboard.copied ? 'teal' : undefined}
+        color={clipboard.copied ? 'success' : undefined}
         sx={{ flex: 1 }}
         disabled={mobile}
       >

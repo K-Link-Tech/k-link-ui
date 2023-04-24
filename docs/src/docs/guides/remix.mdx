@@ -12,9 +12,9 @@ import { PackagesInstallation } from '../../components/PackagesInstallation/Pack
 
 ## Get started with template
 
-The easiest way to get started is to use [the template on GitHub](https://github.com/mantinedev/mantine-remix-template):
+The easiest way to get started is to use [the template on GitHub](https://github.com/mantinedev/k-link-remix-template):
 
-1. Open [template page on GitHub](https://github.com/mantinedev/mantine-remix-template)
+1. Open [template page on GitHub](https://github.com/mantinedev/k-link-remix-template)
 2. Click `Use this template` button
 3. Clone or download the repository
 4. Install dependencies: `yarn`
@@ -25,10 +25,10 @@ The easiest way to get started is to use [the template on GitHub](https://github
 Init new application:
 
 ```bash
-npx create-remix@latest my-mantine-app
+npx create-remix@latest my-k-link-app
 ```
 
-<PackagesInstallation extraPackages={['@mantine/remix', '@emotion/server']} />
+<PackagesInstallation extraPackages={['@k-link/remix', '@emotion/server']} />
 
 Replace your `entry.server.tsx` file with
 
@@ -36,7 +36,7 @@ Replace your `entry.server.tsx` file with
 import { renderToString } from 'react-dom/server';
 import { RemixServer } from '@remix-run/react';
 import type { EntryContext } from '@remix-run/node';
-import { injectStyles, createStylesServer } from '@mantine/remix';
+import { injectStyles, createStylesServer } from '@k-link/remix';
 
 const server = createStylesServer();
 
@@ -56,13 +56,13 @@ export default function handleRequest(
 }
 ```
 
-Add [MantineProvider](/theming/mantine-provider/) and `StylesPlaceholder` to the `root.tsx` file:
+Add [MantineProvider](/theming/k-link-provider/) and `StylesPlaceholder` to the `root.tsx` file:
 
 ```tsx
 import type { MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { MantineProvider, createEmotionCache } from '@mantine/core';
-import { StylesPlaceholder } from '@mantine/remix';
+import { MantineProvider, createEmotionCache } from '@k-link/core';
+import { StylesPlaceholder } from '@k-link/remix';
 import { theme } from './theme';
 
 export const meta: MetaFunction = () => ({
@@ -99,7 +99,7 @@ Replace `entry.client.tsx` with
 ```tsx
 import { RemixBrowser } from '@remix-run/react';
 import { hydrate } from 'react-dom';
-import { ClientProvider } from '@mantine/remix';
+import { ClientProvider } from '@k-link/remix';
 
 hydrate(
   <ClientProvider>
@@ -117,8 +117,8 @@ npm run dev
 
 ## Server streaming support
 
-Mantine is based on [emotion](https://emotion.sh/) which currently does not support [renderToPipeableStream](https://react.dev/reference/react-dom/server/renderToPipeableStream),
-default Remix boilerplate will not support Mantine (and other component libraries based on css-in-js). It is important to replace your `entry.server.tsx`
+Klink UI is based on [emotion](https://emotion.sh/) which currently does not support [renderToPipeableStream](https://reactjs.org/docs/react-dom-server.html#rendertopipeablestream),
+default Remix boilerplate will not support Klink UI (and other component libraries based on css-in-js). It is important to replace your `entry.server.tsx`
 with code provided in this guide in order for server side rendering to work.
 
 ## Next steps

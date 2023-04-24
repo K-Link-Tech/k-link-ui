@@ -1,7 +1,7 @@
 import React from 'react';
-import { DEFAULT_THEME } from '@mantine/core';
+import { DEFAULT_THEME } from '@k-link/core';
 import { IconCode, IconStar, IconRocket } from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
+import { MantineLogo } from '@k-link/ds';
 
 export default [
   {
@@ -13,20 +13,20 @@ export default [
   {
     to: '/pages/basics/',
     label: 'Learn the basics',
-    color: DEFAULT_THEME.colors.violet[5],
+    color: DEFAULT_THEME.colors.purple[5],
     icon: IconStar,
   },
   {
     to: '/pages/about/',
-    label: 'About Mantine',
+    label: 'About Klink UI',
     color: DEFAULT_THEME.colors.indigo[5],
     icon: (props: any) => <MantineLogo type="mark" {...props} />,
     rawIcon: true,
   },
   {
     to: 'https://ui.mantine.dev/',
-    label: 'Mantine UI',
-    color: DEFAULT_THEME.colors.cyan[5],
+    label: 'Klink UI',
+    color: DEFAULT_THEME.colors.blue_light[5],
     icon: (props: any) => <MantineLogo type="mark" variant="ui.mantine.dev" {...props} />,
     rawIcon: true,
   },

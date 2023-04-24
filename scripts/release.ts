@@ -99,7 +99,7 @@ const { argv }: { argv: any } = yargs(hideBin(process.argv))
   open(
     githubRelease({
       user: 'K-Link-Tech',
-      repo: 'klink-ui',
+      repo: 'k-link-ui',
       tag: incrementedVersion,
       title: incrementedVersion,
     })

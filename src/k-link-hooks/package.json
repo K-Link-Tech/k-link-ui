@@ -1,6 +1,6 @@
 {
   "name": "@k-link/hooks",
-  "version": "1.3.2",
+  "version": "1.0.0",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",

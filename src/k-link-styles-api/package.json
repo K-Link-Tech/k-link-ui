@@ -2,7 +2,7 @@
   "name": "@k-link/styles-api",
   "description": "Klink UI components styles api descriptions",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -16,8 +16,8 @@
     "directory": "src/k-link-styles-api"
   },
   "peerDependencies": {
-    "@k-link/core": "1.0.0",
-    "@k-link/hooks": "1.0.0"
+    "@k-link/core": "0.0.0",
+    "@k-link/hooks": "0.0.0"
   },
   "dependencies": {},
   "devDependencies": {}

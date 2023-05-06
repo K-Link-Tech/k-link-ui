@@ -1,5 +1,11 @@
 # Klink UI
 
+- `master` branch purpose only take update (pull) from original mantine repo
+- `k-link-ui-release` branch purpose only release to npm
+- make new branch from `develop` branch if you want to contribute
+
+---
+
 [![NPM](https://img.shields.io/npm/l/@k-link/core)](https://github.com/mantinedev/k-link/blob/master/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/mantinedev/k-link)](https://github.com/mantinedev/k-link/graphs/contributors)
 [![npm](https://img.shields.io/npm/v/@k-link/core)](https://www.npmjs.com/package/@k-link/core)

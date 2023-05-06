@@ -8,9 +8,9 @@
   "license": "MIT",
   "sideEffects": false,
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
-  "homepage": "https://k-link.dev/dates/getting-started/",
+  "homepage": "https://ui.klink.cloud/dates/getting-started/",
   "repository": {
-    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "url": "https://github.com/K-Link-Tech/k-link-ui.git",
     "type": "git",
     "directory": "src/k-link-dates"
   },

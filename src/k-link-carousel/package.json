@@ -8,9 +8,9 @@
   "license": "MIT",
   "sideEffects": false,
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
-  "homepage": "https://k-link.dev/others/carousel/",
+  "homepage": "https://ui.klink.cloud/others/carousel/",
   "repository": {
-    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "url": "https://github.com/K-Link-Tech/k-link-ui.git",
     "type": "git",
     "directory": "src/k-link-carousel"
   },

@@ -8,9 +8,9 @@
   "license": "MIT",
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
   "sideEffects": false,
-  "homepage": "https://k-link.dev/",
+  "homepage": "https://ui.klink.cloud/",
   "repository": {
-    "url": "https://github.com/K-Link-Tech/klink-ui.git",
+    "url": "https://github.com/K-Link-Tech/k-link-ui.git",
     "type": "git",
     "directory": "src/k-link-core"
   },

@@ -11,7 +11,7 @@ export const _DEFAULT_THEME: MantineThemeBase = {
     light: 7,
     dark: 8,
   },
-  focusRing: 'always',
+  focusRing: 'auto',
   loader: 'oval',
   colorScheme: 'light',
   white: '#fff',
@@ -35,21 +35,33 @@ export const _DEFAULT_THEME: MantineThemeBase = {
   },
 
   shadows: {
-    xs: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1)',
-    sm: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 0.625rem 0.9375rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.4375rem 0.4375rem -0.3125rem',
-    md: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.625rem 0.625rem -0.3125rem',
-    lg: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.75rem 1.4375rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 0.75rem 0.75rem -0.4375rem',
-    xl: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 1.0625rem 1.0625rem -0.4375rem',
+    xs: '0 0.0625rem 0.125rem rgba(16, 24, 40, 0.05)',
+
+    sm: '0 0.0625rem 0.1875rem rgba(16, 24, 40, 0.1), 0 0.0625rem 0.125rem rgba(16, 24, 40, 0.06)',
+
+    md: '0 0.25rem 0.5rem -0.125rem rgba(16, 24, 40, 0.1), 0 0.125rem 0.25rem -0.125rem rgba(16, 24, 40, 0.06)',
+
+    lg: '0 0.75rem 1rem -0.25rem rgba(16, 24, 40, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(16, 24, 40, 0.05)',
+
+    xl: '0 1.25rem 1.5rem -0.25rem rgba(16, 24, 40, 0.1), 0 0.5rem 0.5rem -0.25rem rgba(16, 24, 40, 0.04)',
+
+    '2xl': '0 1.5rem 3rem -0.75rem rgba(16, 24, 40, 0.25)',
+
+    // xs: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1)',
+    // sm: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 0.625rem 0.9375rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.4375rem 0.4375rem -0.3125rem',
+    // md: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0 0.625rem 0.625rem -0.3125rem',
+    // lg: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 1.75rem 1.4375rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 0.75rem 0.75rem -0.4375rem',
+    // xl: '0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0 1.0625rem 1.0625rem -0.4375rem',
   },
 
   fontSizes: {
     // text
     xs: '0.75rem', // 12px
-    sm: '0.875rem',
-    md: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
-    '2xl': '1.5rem',
+    sm: '0.875rem', //14px
+    md: '1rem', // 16px
+    lg: '1.125rem', // 18px
+    xl: '1.25rem', // 20px
+    '2xl': '1.5rem', // 24px
 
     // // display
     // 'display-xs': '1.5rem',
@@ -70,12 +82,12 @@ export const _DEFAULT_THEME: MantineThemeBase = {
   },
 
   spacing: {
-    xs: '0.625rem',
-    sm: '0.75rem',
-    md: '1rem',
-    lg: '1.25rem',
-    xl: '1.5rem',
-    '2xl': '2rem',
+    xs: '0.625rem', //10px
+    sm: '0.75rem', //12px
+    md: '1rem', //16px
+    lg: '1.25rem', //20px
+    xl: '1.5rem', //24px
+    '2xl': '2rem', //32px
   },
 
   breakpoints: {
@@ -84,7 +96,7 @@ export const _DEFAULT_THEME: MantineThemeBase = {
     md: '62em',
     lg: '75em',
     xl: '88em',
-    // '2xl': '100em',
+    '2xl': '100em',
   },
 
   headings: {
@@ -109,16 +121,13 @@ export const _DEFAULT_THEME: MantineThemeBase = {
   focusRingStyles: {
     styles: (theme) => ({
       outlineOffset: '0.125rem',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF;',
-      outline: 'none',
-      outlinee: `0.125rem solid ${
+      outline: `0.125rem solid ${
         theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 7 : 5]
       }`,
     }),
     resetStyles: () => ({ outline: 'none' }),
     inputStyles: (theme) => ({
       outline: 'none',
-      boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F4EBFF;',
       borderColor:
         theme.colors[theme.primaryColor][
           typeof theme.primaryShade === 'object'

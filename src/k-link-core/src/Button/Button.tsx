@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import {
   DefaultProps,
-  MantineSize,
   MantineNumberSize,
   MantineGradient,
   MantineColor,
@@ -9,6 +8,7 @@ import {
   useComponentDefaultProps,
   Variants,
   getSize,
+  KlinkSize,
 } from '@k-link/styles';
 import { createPolymorphicComponent } from '@k-link/utils';
 import { UnstyledButton } from '../UnstyledButton';
@@ -20,7 +20,7 @@ export type ButtonStylesNames = Selectors<typeof useStyles>;
 
 export interface ButtonProps extends DefaultProps<ButtonStylesNames, ButtonStylesParams> {
   /** Predefined button size */
-  size?: MantineSize;
+  size?: KlinkSize;
 
   /** Button type attribute */
   type?: 'submit' | 'button' | 'reset';

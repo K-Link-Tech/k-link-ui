@@ -1,9 +1,10 @@
 import type { CSSProperties } from 'react';
 import type {
-  MantineSizes,
-  MantineSize,
+  // MantineSizes,
+  // MantineSize,
   MantineNumberSize,
-  UpdateMantineSizes,
+  KlinkSizes,
+  KlinkSize,
 } from './MantineSize';
 import type { DeepPartial } from './DeepPartial';
 import type { MantineThemeColors } from './MantineColor';
@@ -81,11 +82,11 @@ export interface MantineTheme {
   cursorType: 'default' | 'pointer';
   defaultGradient: MantineGradient;
 
-  fontSizes: UpdateMantineSizes;
-  radius: UpdateMantineSizes;
-  spacing: UpdateMantineSizes;
-  breakpoints: MantineSizes;
-  shadows: Record<MantineSize, string>;
+  fontSizes: KlinkSizes;
+  radius: KlinkSizes;
+  spacing: KlinkSizes;
+  breakpoints: KlinkSizes;
+  shadows: Record<KlinkSize, string>;
 
   headings: {
     fontFamily: CSSProperties['fontFamily'];

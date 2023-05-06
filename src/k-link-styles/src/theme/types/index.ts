@@ -9,7 +9,14 @@ export type {
 export type { MantineGradient } from './MantineGradient';
 export type { MantineStyleSystemProps, SystemProp, SpacingValue } from './MantineStyleSystem';
 export type { MantineShadow } from './MantineShadow';
-export type { MantineNumberSize, MantineSize, MantineSizes } from './MantineSize';
+export type {
+  MantineNumberSize,
+  MantineSize,
+  MantineSizes,
+  KlinkNumberSize,
+  KlinkSize,
+  KlinkSizes,
+} from './MantineSize';
 export type {
   MantineTheme,
   MantineThemeOverride,

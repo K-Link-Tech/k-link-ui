@@ -53,4 +53,4 @@ export const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
   }
 );
 
-FloatingArrow.displayName = '@k-link/core/FloatingArrow';
+FloatingArrow.displayName = '@mantine/core/FloatingArrow';

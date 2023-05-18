@@ -36,6 +36,7 @@ export function Jumbotron() {
           Build fully functional accessible web applications faster than ever – Klink UI includes
           more than 100 customizable components and 40 hooks to cover you in any situation
         </Text>
+        <Text className={classes.description}>Klink UI based on Mantine</Text>
 
         <SimpleGrid
           cols={3}

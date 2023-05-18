@@ -1,7 +1,7 @@
 {
   "name": "@k-link/next",
   "description": "Klink UI integration for Next.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -25,8 +25,8 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@k-link/ssr": "0.0.2",
-    "@k-link/styles": "0.0.2"
+    "@k-link/ssr": "0.0.3",
+    "@k-link/styles": "0.0.3"
   },
   "devDependencies": {}
 }

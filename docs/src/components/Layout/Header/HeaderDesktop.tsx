@@ -24,8 +24,8 @@ export function HeaderDesktop() {
 
           <UnstyledButton mt={2}>
             <Code className={classes.version}>
-              v{corePackageJson.version}{' '}
-              <IconChevronDown size={rem(12)} className={classes.chevron} />
+              v{corePackageJson.version}
+              {/* {' '}<IconChevronDown size={rem(12)} className={classes.chevron} /> */}
             </Code>
           </UnstyledButton>
         </div>

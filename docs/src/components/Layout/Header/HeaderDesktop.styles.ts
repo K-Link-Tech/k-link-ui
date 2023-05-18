@@ -48,7 +48,7 @@ export default createStyles((theme) => ({
   version: {
     fontWeight: 700,
     position: 'relative',
-    paddingRight: rem(20),
+    // paddingRight: rem(20),
     display: 'block',
     marginTop: rem(2),
 

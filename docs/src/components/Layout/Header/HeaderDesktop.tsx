@@ -1,7 +1,6 @@
 /* eslint-disable import/no-relative-packages */
 import React from 'react';
-import { IconChevronDown } from '@tabler/icons-react';
-import { Code, UnstyledButton, RemoveScroll, rem } from '@k-link/core';
+import { Code, UnstyledButton, RemoveScroll } from '@k-link/core';
 import { useSpotlight } from '@k-link/spotlight';
 import { HeaderControls } from '@k-link/ds';
 import corePackageJson from '../../../../../package.json';

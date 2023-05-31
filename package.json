@@ -4,7 +4,7 @@
   "workspaces": [
     "src/*"
   ],
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Klink UI Components Monorepo",
   "main": "index.js",
   "repository": "https://github.com/K-Link-Tech/k-link-ui.git",

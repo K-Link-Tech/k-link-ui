@@ -1,7 +1,7 @@
 {
   "name": "@k-link/styles",
   "description": "Klink UI css-in-js styles engine, based on emotion",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",

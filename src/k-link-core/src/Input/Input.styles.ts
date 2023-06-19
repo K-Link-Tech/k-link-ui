@@ -15,7 +15,7 @@ export interface InputStylesParams {
 export const sizes = {
   xs: rem(30),
   sm: rem(36),
-  md: rem(42),
+  md: rem(44),
   lg: rem(50),
   xl: rem(60),
 };
@@ -124,7 +124,7 @@ export default createStyles(
         boxSizing: 'border-box',
         fontSize: getSize({ size, sizes: theme.fontSizes }),
         width: '100%',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
+        color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[10],
         display: 'block',
         textAlign: 'left',
         cursor: pointer ? 'pointer' : undefined,

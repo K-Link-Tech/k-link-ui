@@ -77,7 +77,7 @@ const DefaultValue: FileInputProps['valueComponent'] = ({ value }) => (
 );
 
 const defaultProps: Partial<FileInputProps> = {
-  size: 'sm',
+  size: 'md',
   valueComponent: DefaultValue,
 };
 

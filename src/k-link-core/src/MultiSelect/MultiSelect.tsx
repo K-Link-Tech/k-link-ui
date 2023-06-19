@@ -126,7 +126,7 @@ function filterValue(value: string[], data: ReadonlyArray<string | SelectItem>):
 }
 
 const defaultProps: Partial<MultiSelectProps> = {
-  size: 'sm',
+  size: 'md',
   valueComponent: DefaultValue,
   itemComponent: DefaultItem,
   transitionProps: { transition: 'fade', duration: 0 },

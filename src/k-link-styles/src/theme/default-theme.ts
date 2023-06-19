@@ -121,6 +121,7 @@ export const _DEFAULT_THEME: MantineThemeBase = {
   focusRingStyles: {
     styles: (theme) => ({
       outlineOffset: '0.125rem',
+      boxShadow: '0px 0px 0px 4px #F4EBFF, 0px 1px 2px rgba(16, 24, 40, 0.05)',
       outline: `0.125rem solid ${
         theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 7 : 5]
       }`,
@@ -128,12 +129,14 @@ export const _DEFAULT_THEME: MantineThemeBase = {
     resetStyles: () => ({ outline: 'none' }),
     inputStyles: (theme) => ({
       outline: 'none',
-      borderColor:
-        theme.colors[theme.primaryColor][
-          typeof theme.primaryShade === 'object'
-            ? theme.primaryShade[theme.colorScheme]
-            : theme.primaryShade
-        ],
+      boxShadow: '0px 0px 0px 4px #F4EBFF, 0px 1px 2px rgba(16, 24, 40, 0.05)',
+      borderColor: theme.colors.primary[4],
+      // borderColor:
+      //   theme.colors[theme.primaryColor][
+      //     typeof theme.primaryShade === 'object'
+      //       ? theme.primaryShade[theme.colorScheme]
+      //       : theme.primaryShade
+      //   ],
     }),
   },
 };

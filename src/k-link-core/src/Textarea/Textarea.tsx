@@ -36,7 +36,7 @@ export interface TextareaProps
 
 const defaultProps: Partial<TextareaProps> = {
   autosize: false,
-  size: 'sm',
+  size: 'md',
   __staticSelector: 'Textarea',
 };
 

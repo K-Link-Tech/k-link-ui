@@ -114,7 +114,7 @@ const CHEVRON_SIZES = {
 const defaultProps: Partial<NumberInputProps> = {
   step: 1,
   hideControls: false,
-  size: 'sm',
+  size: 'md',
   precision: 0,
   noClampOnBlur: false,
   removeTrailingZeros: false,

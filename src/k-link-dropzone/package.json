@@ -1,7 +1,7 @@
 {
   "name": "@k-link/dropzone",
   "description": "Dropzone component built with Klink UI theme and components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -28,13 +28,13 @@
     "upload"
   ],
   "peerDependencies": {
-    "@k-link/core": "0.0.4",
-    "@k-link/hooks": "0.0.4",
+    "@k-link/core": "0.0.5",
+    "@k-link/hooks": "0.0.5",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@k-link/utils": "0.0.4",
+    "@k-link/utils": "0.0.5",
     "react-dropzone": "14.2.3"
   },
   "devDependencies": {}

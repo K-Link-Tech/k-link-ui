@@ -1,7 +1,7 @@
 {
   "name": "@k-link/core",
   "description": "React components library focused on usability, accessibility and developer experience",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -27,14 +27,14 @@
     "emotion"
   ],
   "peerDependencies": {
-    "@k-link/hooks": "0.0.5",
+    "@k-link/hooks": "0.0.4",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "@floating-ui/react": "^0.19.1",
-    "@k-link/styles": "0.0.5",
-    "@k-link/utils": "0.0.5",
+    "@k-link/styles": "0.0.4",
+    "@k-link/utils": "0.0.4",
     "@radix-ui/react-scroll-area": "1.0.2",
     "react-remove-scroll": "^2.5.5",
     "react-textarea-autosize": "8.3.4"

@@ -1,7 +1,7 @@
 {
   "name": "@k-link/tiptap",
   "description": "Rich text editor based on tiptap",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",
@@ -28,15 +28,15 @@
     "rich-text-editor"
   ],
   "peerDependencies": {
-    "@k-link/core": "0.0.5",
-    "@k-link/hooks": "0.0.5",
+    "@k-link/core": "0.0.4",
+    "@k-link/hooks": "0.0.4",
     "@tabler/icons-react": ">=2.1.0",
     "@tiptap/extension-link": "^2.0.0-beta.202",
     "@tiptap/react": "^2.0.0-beta.202",
     "react": ">=16.8.0"
   },
   "dependencies": {
-    "@k-link/utils": "0.0.5"
+    "@k-link/utils": "0.0.4"
   },
   "devDependencies": {}
 }

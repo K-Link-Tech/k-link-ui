@@ -1,7 +1,7 @@
 {
   "name": "@k-link/form",
   "description": "Klink UI form management library",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.ts",

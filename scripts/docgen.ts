@@ -84,8 +84,8 @@ const EXTRA_FILES_PATHS = [
   '../src/k-link-core/src/Pagination/PaginationItems/PaginationItems.tsx',
 
   // Carousel
-  '../@k-link/carousel/Carousel.tsx',
-  '../@k-link/carousel/CarouselSlide/CarouselSlide.tsx',
+  '../src/k-link-carousel/src/Carousel.tsx',
+  '../src/k-link-carousel/src/CarouselSlide/CarouselSlide.tsx',
 
   // Other
   '../src/k-link-notifications/src/Notifications/Notifications.tsx',
